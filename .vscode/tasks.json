@@ -1,0 +1,177 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        // ── Helper (internal) ─────────────────────────────────────────────────
+        // Finds the first *.kicad_pcb or *.kicad_sch in the workspace root.
+        // All tasks below depend on a KiCad project being open.
+
+        // ─── PCB tasks ────────────────────────────────────────────────────────
+        {
+            "label": "KiCad: Export Gerbers",
+            "type": "shell",
+            "command": "${config:kicad.cliPath}",
+            "args": [
+                "pcb", "export", "gerbers",
+                "--output", "${workspaceFolder}\\manufacturing\\gerbers",
+                "${input:pcbFile}"
+            ],
+            "group": "build",
+            "presentation": { "reveal": "always", "panel": "shared" },
+            "problemMatcher": []
+        },
+        {
+            "label": "KiCad: Export PCB PDF",
+            "type": "shell",
+            "command": "${config:kicad.cliPath}",
+            "args": [
+                "pcb", "export", "pdf",
+                "--output", "${workspaceFolder}\\docs\\pcb.pdf",
+                "${input:pcbFile}"
+            ],
+            "group": "build",
+            "presentation": { "reveal": "always", "panel": "shared" },
+            "problemMatcher": []
+        },
+        {
+            "label": "KiCad: Export Drill Files",
+            "type": "shell",
+            "command": "${config:kicad.cliPath}",
+            "args": [
+                "pcb", "export", "drill",
+                "--output", "${workspaceFolder}\\manufacturing\\drill\\",
+                "${input:pcbFile}"
+            ],
+            "group": "build",
+            "presentation": { "reveal": "always", "panel": "shared" },
+            "problemMatcher": []
+        },
+        {
+            "label": "KiCad: Export Pick-and-Place (POS)",
+            "type": "shell",
+            "command": "${config:kicad.cliPath}",
+            "args": [
+                "pcb", "export", "pos",
+                "--output", "${workspaceFolder}\\manufacturing\\pos\\",
+                "${input:pcbFile}"
+            ],
+            "group": "build",
+            "presentation": { "reveal": "always", "panel": "shared" },
+            "problemMatcher": []
+        },
+        {
+            "label": "KiCad: Export STEP (3D Model)",
+            "type": "shell",
+            "command": "${config:kicad.cliPath}",
+            "args": [
+                "pcb", "export", "step",
+                "--output", "${workspaceFolder}\\docs\\board.step",
+                "${input:pcbFile}"
+            ],
+            "group": "build",
+            "presentation": { "reveal": "always", "panel": "shared" },
+            "problemMatcher": []
+        },
+        {
+            "label": "KiCad: Run DRC",
+            "type": "shell",
+            "command": "${config:kicad.cliPath}",
+            "args": [
+                "pcb", "drc",
+                "--output", "${workspaceFolder}\\docs\\drc-report.txt",
+                "--format", "text",
+                "${input:pcbFile}"
+            ],
+            "group": "test",
+            "presentation": { "reveal": "always", "panel": "shared" },
+            "problemMatcher": []
+        },
+
+        // ─── Schematic tasks ──────────────────────────────────────────────────
+        {
+            "label": "KiCad: Export Schematic PDF",
+            "type": "shell",
+            "command": "${config:kicad.cliPath}",
+            "args": [
+                "sch", "export", "pdf",
+                "--output", "${workspaceFolder}\\docs\\schematic.pdf",
+                "${input:schFile}"
+            ],
+            "group": "build",
+            "presentation": { "reveal": "always", "panel": "shared" },
+            "problemMatcher": []
+        },
+        {
+            "label": "KiCad: Export BOM (CSV)",
+            "type": "shell",
+            "command": "${config:kicad.cliPath}",
+            "args": [
+                "sch", "export", "bom",
+                "--output", "${workspaceFolder}\\manufacturing\\bom\\bom.csv",
+                "${input:schFile}"
+            ],
+            "group": "build",
+            "presentation": { "reveal": "always", "panel": "shared" },
+            "problemMatcher": []
+        },
+        {
+            "label": "KiCad: Export Netlist",
+            "type": "shell",
+            "command": "${config:kicad.cliPath}",
+            "args": [
+                "sch", "export", "netlist",
+                "--output", "${workspaceFolder}\\manufacturing\\netlist.net",
+                "${input:schFile}"
+            ],
+            "group": "build",
+            "presentation": { "reveal": "always", "panel": "shared" },
+            "problemMatcher": []
+        },
+        {
+            "label": "KiCad: Run ERC",
+            "type": "shell",
+            "command": "${config:kicad.cliPath}",
+            "args": [
+                "sch", "erc",
+                "--output", "${workspaceFolder}\\docs\\erc-report.txt",
+                "--format", "text",
+                "${input:schFile}"
+            ],
+            "group": "test",
+            "presentation": { "reveal": "always", "panel": "shared" },
+            "problemMatcher": []
+        },
+
+        // ─── Compound: full fabrication export ────────────────────────────────
+        {
+            "label": "KiCad: Full Fabrication Export",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "KiCad: Export Gerbers",
+                "KiCad: Export Drill Files",
+                "KiCad: Export Pick-and-Place (POS)",
+                "KiCad: Export BOM (CSV)",
+                "KiCad: Export Schematic PDF",
+                "KiCad: Export PCB PDF"
+            ],
+            "group": "build",
+            "presentation": { "reveal": "always", "panel": "shared" },
+            "problemMatcher": []
+        }
+    ],
+
+    // ─── Inputs ───────────────────────────────────────────────────────────────
+    "inputs": [
+        {
+            "id": "pcbFile",
+            "type": "promptString",
+            "description": "Path to .kicad_pcb file (relative to workspace root)",
+            "default": "${workspaceFolder}\\my-project.kicad_pcb"
+        },
+        {
+            "id": "schFile",
+            "type": "promptString",
+            "description": "Path to root .kicad_sch file (relative to workspace root)",
+            "default": "${workspaceFolder}\\my-project.kicad_sch"
+        }
+    ]
+}

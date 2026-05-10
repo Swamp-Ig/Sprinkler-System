@@ -1,0 +1,33 @@
+# ─── KiCad local-only files ───────────────────────────────────────────────────
+
+# Per-project local settings (stores UI state: zoom, pan, open files, etc.)
+# These are machine-specific and should NOT be shared.
+*.kicad_prl
+
+# Auto-save backup folders created by KiCad
+*-backups/
+
+# Lock files (created when a file is open in KiCad, safe to ignore)
+~*.lck
+
+# Footprint cache (auto-regenerated, not human-edited)
+fp-info-cache
+
+# ─── OS / editor noise ────────────────────────────────────────────────────────
+
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.history/
+
+# ─── Manufacturing outputs (OPTIONAL) ─────────────────────────────────────────
+# By default, Gerbers / PDFs / BOMs are tracked in Git so reviewers can view
+# fabrication files without running KiCad. Uncomment below to ignore them.
+
+# manufacturing/gerbers/
+# manufacturing/drill/
+# manufacturing/pos/
+# manufacturing/bom/
+# docs/*.pdf
+# docs/*.svg

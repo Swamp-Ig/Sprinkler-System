@@ -1,0 +1,35 @@
+# ─── KiCad project files (S-expression text format) ──────────────────────────
+# Force LF line endings so diffs are clean across platforms.
+*.kicad_sch     text eol=lf
+*.kicad_pcb     text eol=lf
+*.kicad_mod     text eol=lf
+*.kicad_pro     text eol=lf
+*.kicad_sym     text eol=lf
+*.kicad_wks     text eol=lf
+*.kicad_dru     text eol=lf
+
+# ─── Scripts ──────────────────────────────────────────────────────────────────
+*.py            text eol=lf
+*.sh            text eol=lf
+*.bat           text eol=crlf
+*.ps1           text eol=crlf
+
+# ─── Documentation ────────────────────────────────────────────────────────────
+*.md            text=auto
+*.txt           text=auto
+
+# ─── Binary 3D model files ────────────────────────────────────────────────────
+*.step          binary
+*.stp           binary
+*.stl           binary
+*.wrl           binary
+*.3ds           binary
+*.iges          binary
+*.igs           binary
+
+# ─── Binary image/output files ────────────────────────────────────────────────
+*.png           binary
+*.jpg           binary
+*.jpeg          binary
+*.pdf           binary
+*.zip           binary
