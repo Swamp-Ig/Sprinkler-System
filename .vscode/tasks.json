@@ -165,13 +165,13 @@
             "id": "pcbFile",
             "type": "promptString",
             "description": "Path to .kicad_pcb file (relative to workspace root)",
-            "default": "${workspaceFolder}\\my-project.kicad_pcb"
+            "default": "${workspaceFolder}\\Sprinkler System.kicad_pcb"
         },
         {
             "id": "schFile",
             "type": "promptString",
             "description": "Path to root .kicad_sch file (relative to workspace root)",
-            "default": "${workspaceFolder}\\my-project.kicad_sch"
+            "default": "${workspaceFolder}\\Sprinkler System.kicad_sch"
         }
     ]
 }
