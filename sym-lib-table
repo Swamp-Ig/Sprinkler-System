@@ -1,0 +1,4 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "Sprinker System") (type "KiCad") (uri "${KIPRJMOD}/symbols/G3MB-202P.kicad_sym") (options "") (descr ""))
+)
