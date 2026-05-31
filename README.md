@@ -1,97 +1,416 @@
-# KiCad Project Template
+# 6-Zone WiFi Sprinkler Controller
 
-A ready-to-use KiCad project scaffold with Git configuration and VS Code tasks for [KiCad 10.0](https://www.kicad.org/).
+A custom PCB for controlling up to six 24 VAC irrigation solenoid valves via WiFi, using an ESP32 and ESPHome with native Home Assistant integration.
 
-## Quick Start
+## Features
 
-### 1. Create your KiCad project here
+- **6 independent zones** — each zone switches a 24 VAC solenoid valve via an Omron G5LE-1 relay
+- **WiFi control** — ESP32-WROOM-32U with external U.FL antenna connector
+- **Home Assistant integration** — ESPHome firmware; zones appear as switch entities
+- **Onboard power supply** — HLK-PM01 AC-DC module (mains → 5 V); AMS1117-3.3 regulator (5 V → 3.3 V for ESP32)
+- **Relay isolation** — ULN2803A Darlington array isolates ESP32 GPIOs from relay coil drive current
+- **Protected design** — varistors on the 24 VAC rail, fuses on mains and 24 VAC supplies, flyback diodes on relay coils
 
-Open KiCad, choose **File → New Project**, and point it at this folder.
-KiCad will create `<project-name>.kicad_pro`, `<project-name>.kicad_sch`, and `<project-name>.kicad_pcb`.
+## ⚠️ Safety
 
-### 2. Open the folder in VS Code
+> **This board carries mains voltage (Line and Neutral) on the PCB.**  
+> The HLK-PM01 module is connected directly to mains. The 24 VAC solenoid rail is transformer-isolated but still carries AC voltage.
 
+- Do **not** touch or probe the board while it is powered.
+- The enclosure **must** be non-conductive and fully closed before applying mains power.
+- All mains wiring must comply with local electrical codes. Use appropriately rated cable and terminals.
+- The external transformer must be safety-rated (UL, CE, or equivalent) for your locale.
+- Replace fuses only with the specified ratings — see the BOM below.
+
+### Enclosure
+
+This board must be installed in a suitable enclosure. Since it is likely to be installed outdoors near irrigation equipment:
+
+- **IP65 minimum** — dust-tight and protected against water jets. IP66 or better if there is any chance of direct spray or hosing down.
+- Use a **non-conductive (plastic) enclosure** — metal enclosures require additional insulation between the mains terminals and the enclosure wall.
+- All cable entry points must be sealed with appropriate **cable glands** rated for the enclosure IP class.
+- Mount the enclosure **vertically** with cable entries facing down to prevent water pooling at the glands.
+
+### Conformal Coating
+
+Even inside a sealed enclosure, condensation can form on the PCB during temperature cycling. Apply conformal coating after final assembly and testing:
+
+- **Mask before coating**: screw terminals (J2–J3), pluggable terminal connectors (J1, J20–J25; KF2EDG-style), fuse holders, the ESP32 U.FL connector, and the USB-to-UART header (J5) so they remain accessible.
+- Apply 2–3 thin coats of acrylic or silicone conformal coating to both sides of the PCB.
+- Allow to fully cure before installing in the enclosure.
+
+## How It Works
+
+The controller has three linked paths: logic power, 24 VAC valve power, and relay control.
+
+### Logic power path
+Mains (L + N) -> Fuse (F1) -> HLK-PM01 -> 5 V -> AMS1117-3.3 -> 3.3 V -> ESP32 + logic
+
+### 24V Transformer
+Mains (L + N) -> Fuse (F1) -> G3MB-202P SSR (K1) -> Transformer Out (J2)
+
+### Valve power path
+Transformer In (J3) -> Fuse (F2) -> zone switching relays (K20–25) -> solenoids
+
+### Control path
+ESP32 GPIO16 controls K1 (24 VAC rail enable)
+ESP32 GPIO17/18/19/21/22/23 -> ULN2803A -> K20..K25 relay coils -> Zone outputs J20..J25
+
+When a zone is activated, the ESP32 first enables the 24 VAC rail (K1), then drives the selected relay through the ULN2803A. The ULN2803A acts as a low-side driver for the relay coils, keeping ESP32 GPIO current low while switching the 24 VAC solenoid load through the relay contacts.
+
+## Bill of Materials
+
+| Ref | Component | Value / Part No. | Notes |
+|-----|-----------|-----------------|-------|
+| U3 | ESP32 module | ESP32-WROOM-32U | External antenna (U.FL) |
+| U2 | AC-DC module | HLK-PM01 | 100–240 VAC in, 5 V / 600 mA out |
+| U1 | LDO regulator | AMS1117-3.3 | SOT-223 |
+| U4 | Darlington array | ULN2803A | SOIC-18 |
+| K1 | Solid-state relay | Omron G3MB-202P | Gates the 24 VAC solenoid rail (GPIO16) |
+| K20–K25 | Relay ×6 | Omron G5LE-1 | SPDT, 5 V coil, 10 A / 250 VAC contacts |
+| RV20–RV25 | Varistor ×6 | 47 V | Surge protection, one per zone output |
+| F1 | Fuse | 1 A | Mains supply protection |
+| F2 | Fuse | 2 A | 24 VAC supply protection |
+| D1 | Diode | 1N4148 | 24 VAC rail sense circuit (SOD-0805) |
+| — | SMD capacitors | 22 µF, 10 µF, 100 nF | Power supply bulk filtering and decoupling |
+| — | SMD resistors | 100 kΩ, 10 kΩ, 4.7 kΩ | Sense divider and button biasing |
+
+
+See `manufacturing/bom/bom.csv` for the full BOM with quantities, values, and footprints.
+
+## Wiring
+
+### J1 — Main Supply (3-pin pluggable terminal connector, KF2EDG-style, bottom-left of board)
+
+Mains input to the board. Also feeds J2 to supply the external transformer primary.
+
+| Pin | Signal | Connect to |
+|-----|--------|-----------|
+| 1 | GND / Earth | Safety earth |
+| 2 | Live | Mains live (240 VAC) |
+| 3 | Neutral | Mains neutral |
+
+### J2 — XFMR Out (2-pin screw terminal)
+
+240 VAC output from the board to the **primary** of an external step-down transformer.
+
+| Pin | Signal |
+|-----|--------|
+| 1 | Live (switched to transformer primary) |
+| 2 | Neutral |
+
+### J3 — XFMR In (2-pin screw terminal)
+
+24 VAC input from the **secondary** of the external transformer. This is the solenoid supply rail.
+
+| Pin | Signal |
+|-----|--------|
+| 1 | 24 VAC hot |
+| 2 | 24 VAC common / return |
+
+Use a suitable safety-rated 240 VAC → 24 VAC transformer (VA rating = number of valves × ~8 VA each, minimum 50 VA recommended).
+
+### Zone Terminals (2-pin pluggable terminal connectors, KF2EDG-style, one per zone)
+
+Each zone terminal has a switched 24 VAC output and a 24 VAC common. Connect solenoid valve wires here — polarity does not matter for standard solenoids.
+
+| Terminal | Connector | GPIO | Relay |
+|----------|-----------|------|-------|
+| Station 0 | J20 | GPIO 17 | K20 |
+| Station 1 | J21 | GPIO 18 | K21 |
+| Station 2 | J22 | GPIO 19 | K22 |
+| Station 3 | J23 | GPIO 21 | K23 |
+| Station 4 | J24 | GPIO 22 | K24 |
+| Station 5 | J25 | GPIO 23 | K25 |
+
+### J4 — Button Inputs (6-pin JST XH)
+
+Four digital inputs with 10 kΩ resistors (R5, R6, R9, R10). GPIO34 and GPIO35 are input-only pins on the ESP32.
+
+If four buttons are not enough, R10 can be replaced with a capacitor and the four inputs wired as a resistor ladder to a single ADC pin, giving up to 16+ combinations. See the [ESPHome ADC documentation](https://esphome.io/components/sensor/adc.html) for how to read and threshold an analog resistor ladder.
+
+### J5 — UART0 (4-pin JST XH)
+
+For programming and serial debug. Connect a 5 V USB-to-UART adapter here. The 5 V pin feeds U1 (AMS1117-3.3), powering the ESP32 from the adapter supply without needing mains.
+
+| Pin | Signal |
+|-----|--------|
+| 1 | GND |
+| 2 | 5 V |
+| 3 | RX (IO3) |
+| 4 | TX (IO1) |
+
+### J6 — I²C (4-pin JST XH)
+
+General-purpose I²C bus using internal pull-ups enabled in firmware. Suitable for displays, sensors, or expanders.
+
+| Pin | Signal |
+|-----|--------|
+| 1 | GND |
+| 2 | 5 V |
+| 3 | SDA (IO4) |
+| 4 | SCL (IO5) |
+
+An **SSD1309** (or SSD1306) OLED display is one option; any I²C device works. ESPHome has built-in support for a wide range of I²C displays and sensors.
+
+## GPIO Pinout
+
+| GPIO | Function | Notes |
+|------|----------|---------|
+| 0 | BOOT | Pull low to enter bootloader |
+| 2 | Status | Boot-mode indicator |
+| 1 | UART TX | J5 — programming / debug |
+| 3 | UART RX | J5 — programming / debug |
+| 4 | I²C SDA | J6 — internal pull-up enabled in firmware |
+| 5 | I²C SCL | J6 — internal pull-up enabled in firmware |
+| 16 | 24V_On | Enables 24 VAC supply via SSR (K1, G3MB-202P) |
+| 17 | Zone 0 output | → ULN2803A → K20 relay |
+| 18 | Zone 1 output | → ULN2803A → K21 relay |
+| 19 | Zone 2 output | → ULN2803A → K22 relay |
+| 21 | Zone 3 output | → ULN2803A → K23 relay |
+| 22 | Zone 4 output | → ULN2803A → K24 relay |
+| 23 | Zone 5 output | → ULN2803A → K25 relay |
+| 25 | 24V sense input | Sens\_24V — R1/D1/R2/C4 half-wave rectifier; HIGH when 24 VAC present |
+| 32 | Button 0 | J4, 10 kΩ (R5) — active-LOW, button pulls to GND |
+| 33 | Button 1 | J4, 10 kΩ (R6) — active-LOW |
+| 34 | Button 2 | J4, 10 kΩ (R9) — active-LOW, input-only pin, no internal pull-up |
+| 35 | Button 3 | J4, 10 kΩ (R10) — active-LOW, input-only pin, no internal pull-up |
+
+## ESPHome Configuration
+
+Flash the ESP32 via the J5 (UART0) header before installing the board in an enclosure. Add your secrets to `secrets.yaml`.
+
+```yaml
+esphome:
+  name: sprinkler
+  friendly_name: Sprinkler Controller
+
+esp32:
+  board: esp32dev
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+api:
+  encryption:
+    key: !secret api_key
+
+ota:
+  - platform: esphome
+    password: !secret ota_password
+
+i2c:
+  sda: GPIO4
+  scl: GPIO5
+  scan: true
+
+switch:
+  - platform: gpio
+    id: supply_24v
+    pin: GPIO16
+    name: "24V Supply"
+    internal: true        # managed by sprinkler component via valve_open_switch
+    restore_mode: ALWAYS_OFF
+
+  - platform: gpio
+    id: zone_0
+    pin: GPIO17
+    name: "Zone 0"
+    internal: true
+    restore_mode: ALWAYS_OFF
+
+  - platform: gpio
+    id: zone_1
+    pin: GPIO18
+    name: "Zone 1"
+    internal: true
+    restore_mode: ALWAYS_OFF
+
+  - platform: gpio
+    id: zone_2
+    pin: GPIO19
+    name: "Zone 2"
+    internal: true
+    restore_mode: ALWAYS_OFF
+
+  - platform: gpio
+    id: zone_3
+    pin: GPIO21
+    name: "Zone 3"
+    internal: true
+    restore_mode: ALWAYS_OFF
+
+  - platform: gpio
+    id: zone_4
+    pin: GPIO22
+    name: "Zone 4"
+    internal: true
+    restore_mode: ALWAYS_OFF
+
+  - platform: gpio
+    id: zone_5
+    pin: GPIO23
+    name: "Zone 5"
+    internal: true
+    restore_mode: ALWAYS_OFF
+
+sprinkler:
+  - id: sprinkler
+    main_switch: "Sprinkler System"
+    auto_advance: true
+    valve_open_switch: supply_24v    # turns 24 VAC rail on/off automatically
+    valves:
+      - valve_switch: zone_0
+        enable_switch: "Enable Zone 0"
+        run_duration: 300s
+        name: "Zone 0"
+      - valve_switch: zone_1
+        enable_switch: "Enable Zone 1"
+        run_duration: 300s
+        name: "Zone 1"
+      - valve_switch: zone_2
+        enable_switch: "Enable Zone 2"
+        run_duration: 300s
+        name: "Zone 2"
+      - valve_switch: zone_3
+        enable_switch: "Enable Zone 3"
+        run_duration: 300s
+        name: "Zone 3"
+      - valve_switch: zone_4
+        enable_switch: "Enable Zone 4"
+        run_duration: 300s
+        name: "Zone 4"
+      - valve_switch: zone_5
+        enable_switch: "Enable Zone 5"
+        run_duration: 300s
+        name: "Zone 5"
+
+binary_sensor:
+  - platform: gpio
+    name: "Button 0"
+    pin:
+      number: GPIO32
+      mode: INPUT
+      inverted: true    # active-LOW — button pulls to GND
+    id: button_0
+
+  - platform: gpio
+    name: "Button 1"
+    pin:
+      number: GPIO33
+      mode: INPUT
+      inverted: true
+    id: button_1
+
+  - platform: gpio
+    name: "Button 2"
+    pin:
+      number: GPIO34
+      mode: INPUT         # input-only pin — no internal pull-up
+      inverted: true
+    id: button_2
+
+  - platform: gpio
+    name: "Button 3"
+    pin:
+      number: GPIO35
+      mode: INPUT         # input-only pin — no internal pull-up
+      inverted: true
+    id: button_3
+
+  - platform: gpio
+    name: "24V Present"
+    pin:
+      number: GPIO25
+      mode: INPUT
+    id: sens_24v
+    device_class: power
+    entity_category: diagnostic
+
+  - platform: template
+    name: "24V Fault"
+    id: fault_24v
+    device_class: problem
+    filters:
+      - delayed_on: 1s    # allow transformer + RC filter to charge before flagging fault
+    lambda: |-
+      // Fault: 24 VAC supply commanded ON but rail not detected
+      return id(supply_24v).state && !id(sens_24v).state;
 ```
-File → Open Folder → select this folder
-```
 
-Install the recommended extensions when prompted (TOML support, Git Graph, GitLens).
+`restore_mode: ALWAYS_OFF` ensures all outputs are off on boot or after a power failure — valves never left open unintentionally.
 
-### 3. Run KiCad CLI tasks
+The zone GPIO switches are marked `internal: true` so they don't appear as individual entities in Home Assistant — the `sprinkler` component exposes them as named valves instead. The **24V Supply** switch is also internal; `valve_open_switch: supply_24v` tells ESPHome to energise K1 (the 24 VAC SSR) automatically when the first valve opens and cut it after the last valve closes.
 
-Use **Terminal → Run Task** (or `Ctrl+Shift+P` → *Tasks: Run Task*) to access:
+Adjust `run_duration` per zone as needed.
 
-| Task | Description |
-|------|-------------|
-| KiCad: Run ERC | Electrical Rule Check → `docs/erc-report.txt` |
-| KiCad: Run DRC | Design Rule Check → `docs/drc-report.txt` |
-| KiCad: Export Schematic PDF | → `docs/schematic.pdf` |
-| KiCad: Export PCB PDF | → `docs/pcb.pdf` |
-| KiCad: Export Gerbers | → `manufacturing/gerbers/` |
-| KiCad: Export Drill Files | → `manufacturing/drill/` |
-| KiCad: Export Pick-and-Place (POS) | → `manufacturing/pos/` |
-| KiCad: Export BOM (CSV) | → `manufacturing/bom/bom.csv` |
-| KiCad: Export STEP (3D Model) | → `docs/board.step` |
-| KiCad: Export Netlist | → `manufacturing/netlist.net` |
-| **KiCad: Full Fabrication Export** | Runs all of the above in sequence |
+The ULN2803A inputs are active-high: GPIO high energises the relay coil and opens the solenoid valve.
 
-Each task will prompt you for the path to your `.kicad_pcb` or `.kicad_sch` file.
-The default is `${workspaceFolder}\my-project.kicad_pcb` — update `.vscode/tasks.json` with your actual project name for a smoother workflow.
+### 24 VAC Fault Detection
 
-## Configuring the KiCad CLI Path
+GPIO25 reads the `Sens_24V` net, driven by a half-wave rectifier (R1 100 kΩ → D1 1N4148 → R2 10 kΩ / C4 10 µF to GND) from the 24 VAC solenoid rail. When the rail is live the pin sits at approximately 2.4 V (logic HIGH). When F2 blows or the transformer is absent, C4 discharges through R2 (τ = 100 ms) and the pin falls to logic LOW within ~300 ms.
 
-If you use a different KiCad version, edit `kicad.cliPath` in `.vscode/settings.json`:
+The **24V Fault** template sensor fires when `supply_24v` is `ON` but `sens_24v` is `OFF` — the SSR has been commanded on but 24 VAC has not appeared or has been lost, most likely a blown F2. Wire a Home Assistant automation to this entity to alert and turn off all zones on fault.
 
-```jsonc
-"kicad.cliPath": "C:\\Program Files\\KiCad\\10.0\\bin\\kicad-cli.exe"
-```
+## Assembly Notes
 
-Installed versions found on this machine: `8.0`, `9.0`, `10.0`
+1. **SMD first** — solder U1 (AMS1117, SOT-223), U4 (ULN2803A, SOIC-18), bypass capacitors, and resistors before installing through-hole parts.
+2. **HLK-PM01 (U2)** — the module solders via its 4 pins. Ensure solid joints; this carries mains current.
+3. **Relay orientation** — G5LE-1 relays are polarised. Match the notch on pin 1 to the PCB silkscreen indicator.
+4. **ULN2803A (U4)** — SOIC-18 surface-mount package; cannot be socketed. Take care with orientation — pin 1 dot to silkscreen marker.
+5. **ESP32 antenna clearance** — route the U.FL antenna cable away from the PCB and metal enclosure walls; keep it clear of high-voltage traces.
+6. **Fuse holders** — use 5×20 mm holders per the footprint. Insert fuses after all soldering is complete.
+7. **Bench test & flash** — before applying mains, connect a 5 V USB-to-UART adapter to J5 (UART0). The adapter's 5 V pin powers U1 (AMS1117-3.3), which in turn supplies 3.3 V to the ESP32. Verify 3.3 V is present on the low-voltage rail with a multimeter. Hold BOOT (GPIO0 low) and press EN to enter the bootloader, then flash ESPHome via `esphome run`. Confirm the device connects to WiFi and appears in Home Assistant. Disconnect J5.
+8. **Mains power-on (no transformer)** — Leave J5 disconnected. Apply mains via J1. Verify 5 V at U2 output and 3.3 V at U1 output with a multimeter. Confirm the ESP32 boots and reconnects to Home Assistant. Disconnect mains.
+9. **Full commissioning** — Wire the transformer between J2 (primary) and J3 (secondary). Connect solenoids to the zone terminals. Apply mains and test each zone from Home Assistant.
 
 ## Project Structure
 
 ```
-kicad-template/
-├── *.kicad_pro          ← KiCad project file (TOML)       [created by KiCad]
-├── *.kicad_sch          ← Root schematic sheet             [created by KiCad]
-├── *.kicad_pcb          ← PCB layout                       [created by KiCad]
-├── sheets/              ← Hierarchical schematic sub-sheets
-├── footprints/          ← Custom footprint library (.kicad_mod)
-├── symbols/             ← Custom symbol library (.kicad_sym)
-├── 3d_models/           ← Custom 3D component models (.step, .wrl)
-├── manufacturing/
-│   ├── gerbers/         ← Gerber files for PCB fabrication
-│   ├── drill/           ← Excellon drill files
-│   ├── pos/             ← Pick-and-place / centroid files
-│   └── bom/             ← Bill of materials exports
-├── docs/                ← Schematic/PCB PDFs, DRC/ERC reports
-├── .gitignore           ← Ignores *.kicad_prl, backups, lock files
-├── .gitattributes       ← Marks KiCad files as text (LF), 3D models as binary
-└── .vscode/
-    ├── settings.json    ← File associations, Explorer filters, CLI path
-    ├── tasks.json       ← KiCad CLI export/check tasks
-    └── extensions.json  ← Recommended VS Code extensions
+Sprinkler System.kicad_pro    ← KiCad project file
+Sprinkler System.kicad_sch    ← Root schematic
+Sprinkler System.kicad_pcb    ← PCB layout
+sheets/                        ← Hierarchical schematic sub-sheets
+symbols/                       ← Custom symbol library (G3MB-202P)
+footprints/                    ← Custom footprints (relay, fuse holder)
+3d_models/                     ← Custom 3D models (.step)
+manufacturing/
+  gerbers/                     ← Gerber files for PCB fabrication
+  drill/                       ← Excellon drill files
+  pos/                         ← Pick-and-place centroid files
+  bom/bom.csv                  ← Bill of materials
+docs/                          ← Schematic/PCB PDFs, DRC/ERC reports
 ```
 
-## Git Notes
+## Developing
 
-- **`.kicad_prl`** is gitignored — it stores per-machine UI state (zoom, pan, open windows)
-- **`.kicad_sch`, `.kicad_pcb`, `.kicad_pro`** are tracked as UTF-8 text with LF endings
-- **`*-backups/`** folders created by KiCad are gitignored
-- Manufacturing outputs (Gerbers, PDFs) are tracked by default so reviewers can access fab files without running KiCad. Comment them out in `.gitignore` if you prefer not to track them.
+VS Code tasks are provided for all KiCad CLI exports. Run them via **Terminal → Run Task** or the command palette (`Ctrl+Shift+P` → *Tasks: Run Task*). All tasks prompt for the relevant `.kicad_pcb` or `.kicad_sch` file.
 
-## KiCad CLI Reference
+### Checks
 
-```powershell
-# Check installed version
-& "C:\Program Files\KiCad\10.0\bin\kicad-cli.exe" version
+| Task | Output |
+|------|--------|
+| KiCad: Run ERC | `docs/erc-report.txt` |
+| KiCad: Run DRC | `docs/drc-report.txt` |
 
-# List available subcommands
-& "C:\Program Files\KiCad\10.0\bin\kicad-cli.exe" --help
+Run ERC and DRC before generating any fabrication outputs. Fix all errors before submitting to a board house.
 
-# Export Gerbers manually
-& "C:\Program Files\KiCad\10.0\bin\kicad-cli.exe" pcb export gerbers `
-    --output .\manufacturing\gerbers\ .\my-project.kicad_pcb
-```
+### Fabrication outputs
 
-Full CLI documentation: <https://docs.kicad.org/10.0/en/cli/cli.html>
+| Task | Output |
+|------|--------|
+| KiCad: Export Gerbers | `manufacturing/gerbers/` |
+| KiCad: Export Drill Files | `manufacturing/drill/` |
+| KiCad: Export Pick-and-Place (POS) | `manufacturing/pos/` |
+| KiCad: Export BOM (CSV) | `manufacturing/bom/bom.csv` |
+| KiCad: Export Schematic PDF | `docs/schematic.pdf` |
+| KiCad: Export PCB PDF | `docs/pcb.pdf` |
+| KiCad: Export STEP (3D Model) | `docs/board.step` |
+| KiCad: Full Fabrication Export | All of the above (except STEP), run in sequence |
+
+**KiCad: Full Fabrication Export** is the normal pre-submission task — it runs Gerbers, drill, POS, BOM, schematic PDF, and PCB PDF in order.
+
+### Requirements
+
+- [KiCad 8+](https://www.kicad.org/download/) with the CLI (`kicad-cli`) on your PATH, or set `kicad.cliPath` in VS Code settings to the full path of the executable.

@@ -1,10 +1,6 @@
 {
     "recommendations": [
         // TOML syntax highlighting for .kicad_pro files
-        "tamasfe.even-better-toml",
-        // Visual Git graph / history browser
-        "mhutchie.git-graph",
-        // Enhanced Git blame, history, and lens annotations
-        "eamodio.gitlens"
+        "tamasfe.even-better-toml"
     ]
 }
