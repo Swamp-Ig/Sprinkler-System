@@ -26,6 +26,9 @@
             "args": [
                 "pcb", "export", "pdf",
                 "--output", "${workspaceFolder}\\docs\\pcb.pdf",
+                "--layers", "F.Cu,B.Cu,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask,Edge.Cuts,F.Fab,B.Fab",
+                "--mode-single",
+                "--include-border-title",
                 "${input:pcbFile}"
             ],
             "group": "build",
@@ -51,7 +54,9 @@
             "command": "${config:kicad.cliPath}",
             "args": [
                 "pcb", "export", "pos",
-                "--output", "${workspaceFolder}\\manufacturing\\pos\\",
+                "--format", "csv",
+                "--units", "mm",
+                "--output", "${workspaceFolder}\\manufacturing\\pos\\Sprinkler System-pos.csv",
                 "${input:pcbFile}"
             ],
             "group": "build",
@@ -149,11 +154,13 @@
                 "KiCad: Export Gerbers",
                 "KiCad: Export Drill Files",
                 "KiCad: Export Pick-and-Place (POS)",
+                "KiCad: Export STEP (3D Model)",
                 "KiCad: Export BOM (CSV)",
                 "KiCad: Export Schematic PDF",
-                "KiCad: Export PCB PDF"
+                "KiCad: Export PCB PDF",
+                "KiCad: Export Netlist"
             ],
-            "group": "build",
+            "group": { "kind": "build", "isDefault": true },
             "presentation": { "reveal": "always", "panel": "shared" },
             "problemMatcher": []
         }

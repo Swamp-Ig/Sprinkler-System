@@ -385,7 +385,7 @@ docs/                          ← Schematic/PCB PDFs, DRC/ERC reports
 
 ## Developing
 
-VS Code tasks are provided for all KiCad CLI exports. Run them via **Terminal → Run Task** or the command palette (`Ctrl+Shift+P` → *Tasks: Run Task*). All tasks prompt for the relevant `.kicad_pcb` or `.kicad_sch` file.
+VS Code tasks are provided for all KiCad CLI exports. Run them via **Terminal → Run Task** or the command palette (`Ctrl+Shift+P` → *Tasks: Run Task*). Each task pre-fills the project `.kicad_pcb` or `.kicad_sch` path — press Enter to accept or type a different path.
 
 ### Checks
 
@@ -404,6 +404,7 @@ Run ERC and DRC before generating any fabrication outputs. Fix all errors before
 | KiCad: Export Drill Files | `manufacturing/drill/` |
 | KiCad: Export Pick-and-Place (POS) | `manufacturing/pos/` |
 | KiCad: Export BOM (CSV) | `manufacturing/bom/bom.csv` |
+| KiCad: Export Netlist | `manufacturing/netlist.net` |
 | KiCad: Export Schematic PDF | `docs/schematic.pdf` |
 | KiCad: Export PCB PDF | `docs/pcb.pdf` |
 | KiCad: Export STEP (3D Model) | `docs/board.step` |
