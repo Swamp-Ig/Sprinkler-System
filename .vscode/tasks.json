@@ -29,6 +29,7 @@
                 "--layers", "F.Cu,B.Cu,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask,Edge.Cuts,F.Fab,B.Fab",
                 "--mode-single",
                 "--include-border-title",
+                "--bg-color", "'#000000'",
                 "${input:pcbFile}"
             ],
             "group": "build",

@@ -126,6 +126,26 @@
           ""
         ],
         [
+          "extra_footprint|214000000|127000000|bdb8c822-bde9-47ae-bedd-0a1447022ab0|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "extra_footprint|214000000|50000000|ba0dd780-9294-46e4-aa2f-f6179b25e3fa|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "extra_footprint|57000000|127000000|1d2c3121-aea9-4ec3-be46-0355834a0a2b|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "extra_footprint|57000000|50000000|cf553b4c-d103-490c-b5c2-102cf728319d|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
+          "footprint_filters_mismatch|95000000|63770000|f17d4f38-12a9-4b2d-8bf4-5d6d62ee0759|00000000-0000-0000-0000-000000000000",
+          ""
+        ],
+        [
           "silk_edge_clearance|100850000|130500000|69ebbf42-98ff-434d-a065-15b024bbf805|3eb090a6-0963-41c9-b4d5-d9b005f99fb4",
           ""
         ],
@@ -266,7 +286,7 @@
           ""
         ],
         [
-          "silk_overlap|95000000|67224819|e8710419-927c-4e66-bf79-7dcb9b52751d|f5f7e026-95ea-4e01-a456-2ba484a7e150",
+          "silk_overlap|95000000|66224819|e8710419-927c-4e66-bf79-7dcb9b52751d|f5f7e026-95ea-4e01-a456-2ba484a7e150",
           ""
         ]
       ],
@@ -652,8 +672,8 @@
       "endpoint_off_grid": "warning",
       "extra_units": "error",
       "field_name_whitespace": "warning",
-      "footprint_filter": "ignore",
-      "footprint_link_issues": "warning",
+      "footprint_filter": "warning",
+      "footprint_link_issues": "ignore",
       "four_way_junction": "ignore",
       "ground_pin_not_ground": "warning",
       "hier_label_mismatch": "error",
@@ -661,7 +681,7 @@
       "label_dangling": "error",
       "label_multiple_wires": "warning",
       "lib_symbol_issues": "warning",
-      "lib_symbol_mismatch": "warning",
+      "lib_symbol_mismatch": "ignore",
       "missing_bidi_pin": "warning",
       "missing_input_pin": "warning",
       "missing_power_pin": "error",
@@ -673,13 +693,13 @@
       "pin_not_connected": "error",
       "pin_not_driven": "error",
       "pin_to_pin": "warning",
-      "power_pin_not_driven": "error",
+      "power_pin_not_driven": "ignore",
       "same_local_global_label": "warning",
       "similar_label_and_power": "warning",
       "similar_labels": "warning",
       "similar_power": "warning",
       "simulation_model_issue": "ignore",
-      "single_global_label": "ignore",
+      "single_global_label": "warning",
       "stacked_pin_name": "warning",
       "unannotated": "error",
       "unconnected_wire_endpoint": "warning",
@@ -914,7 +934,7 @@
         "uuid": "8fa12040-b3d8-4f13-b02e-6c4ba5cdd128"
       }
     ],
-    "used_designators": "U1-6,U21-22,D1-2,#PWR72,#PWR74-75,J1-7,J20-25,R1-13,R20-25,LED1-3,K1-2,K20-25,C1-5,C20-25,RV20-25,F1-3,SW1-3,TP1-4",
+    "used_designators": "",
     "variants": []
   },
   "sheets": [

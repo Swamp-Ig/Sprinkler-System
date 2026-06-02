@@ -46,5 +46,6 @@
 
     // ─── Git ────────────────────────────────────────────────────────────────
     // Suppress "too many changes" warning that appears after KiCad saves.
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+
 }
