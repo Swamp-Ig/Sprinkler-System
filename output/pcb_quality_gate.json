@@ -1,0 +1,1121 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-06-03T04:59:21",
+    "ignored_checks": [],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.3",
+    "schematic_parity": [],
+    "source": "Sprinkler System.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Margin",
+                    "pos": {
+                        "x": 217.5,
+                        "y": 50.0
+                    },
+                    "uuid": "3879de5e-83db-4f61-a2ef-baf93528f66b"
+                },
+                {
+                    "description": "Segment on F.Silkscreen",
+                    "pos": {
+                        "x": 217.5,
+                        "y": 80.0
+                    },
+                    "uuid": "83aa96ab-ab31-4cb9-9562-286133f5e03b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 131.0
+                    },
+                    "uuid": "d97a8173-3237-4a31-bd7c-35422ec749c2"
+                },
+                {
+                    "description": "Segment of J21 on F.Silkscreen",
+                    "pos": {
+                        "x": 121.17,
+                        "y": 121.69
+                    },
+                    "uuid": "f6d80a61-a298-4ebc-9110-1d73262187f1"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Margin",
+                    "pos": {
+                        "x": 214.0,
+                        "y": 130.5
+                    },
+                    "uuid": "69ebbf42-98ff-434d-a065-15b024bbf805"
+                },
+                {
+                    "description": "Segment of J21 on F.Silkscreen",
+                    "pos": {
+                        "x": 121.17,
+                        "y": 121.69
+                    },
+                    "uuid": "f6d80a61-a298-4ebc-9110-1d73262187f1"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 131.0
+                    },
+                    "uuid": "d97a8173-3237-4a31-bd7c-35422ec749c2"
+                },
+                {
+                    "description": "Segment of J21 on F.Silkscreen",
+                    "pos": {
+                        "x": 130.4,
+                        "y": 131.11
+                    },
+                    "uuid": "f1b1e459-a48b-4c5a-85b5-0f5c3a80927d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Margin",
+                    "pos": {
+                        "x": 214.0,
+                        "y": 130.5
+                    },
+                    "uuid": "69ebbf42-98ff-434d-a065-15b024bbf805"
+                },
+                {
+                    "description": "Segment of J21 on F.Silkscreen",
+                    "pos": {
+                        "x": 130.4,
+                        "y": 131.11
+                    },
+                    "uuid": "f1b1e459-a48b-4c5a-85b5-0f5c3a80927d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 131.0
+                    },
+                    "uuid": "d97a8173-3237-4a31-bd7c-35422ec749c2"
+                },
+                {
+                    "description": "Segment of J20 on F.Silkscreen",
+                    "pos": {
+                        "x": 100.85,
+                        "y": 121.69
+                    },
+                    "uuid": "3eb090a6-0963-41c9-b4d5-d9b005f99fb4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Margin",
+                    "pos": {
+                        "x": 214.0,
+                        "y": 130.5
+                    },
+                    "uuid": "69ebbf42-98ff-434d-a065-15b024bbf805"
+                },
+                {
+                    "description": "Segment of J20 on F.Silkscreen",
+                    "pos": {
+                        "x": 100.85,
+                        "y": 121.69
+                    },
+                    "uuid": "3eb090a6-0963-41c9-b4d5-d9b005f99fb4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 131.0
+                    },
+                    "uuid": "d97a8173-3237-4a31-bd7c-35422ec749c2"
+                },
+                {
+                    "description": "Segment of J20 on F.Silkscreen",
+                    "pos": {
+                        "x": 110.08,
+                        "y": 131.11
+                    },
+                    "uuid": "78482bf6-5702-457e-97cb-3be5e2643674"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Margin",
+                    "pos": {
+                        "x": 214.0,
+                        "y": 130.5
+                    },
+                    "uuid": "69ebbf42-98ff-434d-a065-15b024bbf805"
+                },
+                {
+                    "description": "Segment of J20 on F.Silkscreen",
+                    "pos": {
+                        "x": 110.08,
+                        "y": 131.11
+                    },
+                    "uuid": "78482bf6-5702-457e-97cb-3be5e2643674"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 131.0
+                    },
+                    "uuid": "d97a8173-3237-4a31-bd7c-35422ec749c2"
+                },
+                {
+                    "description": "Segment of J25 on F.Silkscreen",
+                    "pos": {
+                        "x": 199.474,
+                        "y": 121.69
+                    },
+                    "uuid": "3383b810-6964-4047-ba2a-6a2278d09207"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Margin",
+                    "pos": {
+                        "x": 214.0,
+                        "y": 130.5
+                    },
+                    "uuid": "69ebbf42-98ff-434d-a065-15b024bbf805"
+                },
+                {
+                    "description": "Segment of J25 on F.Silkscreen",
+                    "pos": {
+                        "x": 199.474,
+                        "y": 121.69
+                    },
+                    "uuid": "3383b810-6964-4047-ba2a-6a2278d09207"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 131.0
+                    },
+                    "uuid": "d97a8173-3237-4a31-bd7c-35422ec749c2"
+                },
+                {
+                    "description": "Segment of J25 on F.Silkscreen",
+                    "pos": {
+                        "x": 208.704,
+                        "y": 131.11
+                    },
+                    "uuid": "0b0b3fd9-2794-4055-b318-9953a54a822b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Margin",
+                    "pos": {
+                        "x": 214.0,
+                        "y": 130.5
+                    },
+                    "uuid": "69ebbf42-98ff-434d-a065-15b024bbf805"
+                },
+                {
+                    "description": "Segment of J25 on F.Silkscreen",
+                    "pos": {
+                        "x": 208.704,
+                        "y": 131.11
+                    },
+                    "uuid": "0b0b3fd9-2794-4055-b318-9953a54a822b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 131.0
+                    },
+                    "uuid": "d97a8173-3237-4a31-bd7c-35422ec749c2"
+                },
+                {
+                    "description": "Segment of J24 on F.Silkscreen",
+                    "pos": {
+                        "x": 182.13,
+                        "y": 121.69
+                    },
+                    "uuid": "954cbdf0-26be-41e6-b458-2f8164f50107"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Margin",
+                    "pos": {
+                        "x": 214.0,
+                        "y": 130.5
+                    },
+                    "uuid": "69ebbf42-98ff-434d-a065-15b024bbf805"
+                },
+                {
+                    "description": "Segment of J24 on F.Silkscreen",
+                    "pos": {
+                        "x": 182.13,
+                        "y": 121.69
+                    },
+                    "uuid": "954cbdf0-26be-41e6-b458-2f8164f50107"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 131.0
+                    },
+                    "uuid": "d97a8173-3237-4a31-bd7c-35422ec749c2"
+                },
+                {
+                    "description": "Segment of J24 on F.Silkscreen",
+                    "pos": {
+                        "x": 191.36,
+                        "y": 131.11
+                    },
+                    "uuid": "d4fdfc6d-8777-4450-b9cd-66678c6e50fe"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Margin",
+                    "pos": {
+                        "x": 214.0,
+                        "y": 130.5
+                    },
+                    "uuid": "69ebbf42-98ff-434d-a065-15b024bbf805"
+                },
+                {
+                    "description": "Segment of J24 on F.Silkscreen",
+                    "pos": {
+                        "x": 191.36,
+                        "y": 131.11
+                    },
+                    "uuid": "d4fdfc6d-8777-4450-b9cd-66678c6e50fe"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 131.0
+                    },
+                    "uuid": "d97a8173-3237-4a31-bd7c-35422ec749c2"
+                },
+                {
+                    "description": "Segment of J23 on F.Silkscreen",
+                    "pos": {
+                        "x": 161.81,
+                        "y": 121.69
+                    },
+                    "uuid": "9e2294c8-5fd8-4305-abb4-2d37a4f2031e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Margin",
+                    "pos": {
+                        "x": 214.0,
+                        "y": 130.5
+                    },
+                    "uuid": "69ebbf42-98ff-434d-a065-15b024bbf805"
+                },
+                {
+                    "description": "Segment of J23 on F.Silkscreen",
+                    "pos": {
+                        "x": 161.81,
+                        "y": 121.69
+                    },
+                    "uuid": "9e2294c8-5fd8-4305-abb4-2d37a4f2031e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 131.0
+                    },
+                    "uuid": "d97a8173-3237-4a31-bd7c-35422ec749c2"
+                },
+                {
+                    "description": "Segment of J23 on F.Silkscreen",
+                    "pos": {
+                        "x": 171.04,
+                        "y": 131.11
+                    },
+                    "uuid": "d4bc8868-a0c1-4e58-919b-d4f0374806f0"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Margin",
+                    "pos": {
+                        "x": 214.0,
+                        "y": 130.5
+                    },
+                    "uuid": "69ebbf42-98ff-434d-a065-15b024bbf805"
+                },
+                {
+                    "description": "Segment of J23 on F.Silkscreen",
+                    "pos": {
+                        "x": 171.04,
+                        "y": 131.11
+                    },
+                    "uuid": "d4bc8868-a0c1-4e58-919b-d4f0374806f0"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 131.0
+                    },
+                    "uuid": "d97a8173-3237-4a31-bd7c-35422ec749c2"
+                },
+                {
+                    "description": "Segment of J22 on F.Silkscreen",
+                    "pos": {
+                        "x": 141.49,
+                        "y": 121.69
+                    },
+                    "uuid": "6dfba8f1-7501-4808-ab9e-0086e1b6f2bb"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Margin",
+                    "pos": {
+                        "x": 214.0,
+                        "y": 130.5
+                    },
+                    "uuid": "69ebbf42-98ff-434d-a065-15b024bbf805"
+                },
+                {
+                    "description": "Segment of J22 on F.Silkscreen",
+                    "pos": {
+                        "x": 141.49,
+                        "y": 121.69
+                    },
+                    "uuid": "6dfba8f1-7501-4808-ab9e-0086e1b6f2bb"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 131.0
+                    },
+                    "uuid": "d97a8173-3237-4a31-bd7c-35422ec749c2"
+                },
+                {
+                    "description": "Segment of J22 on F.Silkscreen",
+                    "pos": {
+                        "x": 150.72,
+                        "y": 131.11
+                    },
+                    "uuid": "4d7a2dd8-b8d0-4371-8759-2307b9c8e11a"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Margin",
+                    "pos": {
+                        "x": 214.0,
+                        "y": 130.5
+                    },
+                    "uuid": "69ebbf42-98ff-434d-a065-15b024bbf805"
+                },
+                {
+                    "description": "Segment of J22 on F.Silkscreen",
+                    "pos": {
+                        "x": 150.72,
+                        "y": 131.11
+                    },
+                    "uuid": "4d7a2dd8-b8d0-4371-8759-2307b9c8e11a"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 131.0
+                    },
+                    "uuid": "d97a8173-3237-4a31-bd7c-35422ec749c2"
+                },
+                {
+                    "description": "Segment of J1 on F.Silkscreen",
+                    "pos": {
+                        "x": 79.29,
+                        "y": 121.69
+                    },
+                    "uuid": "a2329bb7-eaae-46af-9638-0e75411f4a01"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Margin",
+                    "pos": {
+                        "x": 214.0,
+                        "y": 130.5
+                    },
+                    "uuid": "69ebbf42-98ff-434d-a065-15b024bbf805"
+                },
+                {
+                    "description": "Segment of J1 on F.Silkscreen",
+                    "pos": {
+                        "x": 79.29,
+                        "y": 121.69
+                    },
+                    "uuid": "a2329bb7-eaae-46af-9638-0e75411f4a01"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 57.0,
+                        "y": 131.0
+                    },
+                    "uuid": "d97a8173-3237-4a31-bd7c-35422ec749c2"
+                },
+                {
+                    "description": "Segment of J1 on F.Silkscreen",
+                    "pos": {
+                        "x": 92.33,
+                        "y": 131.11
+                    },
+                    "uuid": "d0d7aede-46b7-47e5-8fa9-a811b8561947"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on Margin",
+                    "pos": {
+                        "x": 214.0,
+                        "y": 130.5
+                    },
+                    "uuid": "69ebbf42-98ff-434d-a065-15b024bbf805"
+                },
+                {
+                    "description": "Segment of J1 on F.Silkscreen",
+                    "pos": {
+                        "x": 92.33,
+                        "y": 131.11
+                    },
+                    "uuid": "d0d7aede-46b7-47e5-8fa9-a811b8561947"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "PTH pad 39 [GND] of U4",
+                    "pos": {
+                        "x": 144.0595,
+                        "y": 61.0365
+                    },
+                    "uuid": "fbc7aa20-71a4-44c0-b499-29a18c78dd92"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "comment": "",
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "PTH pad 39 [GND] of U4",
+                    "pos": {
+                        "x": 144.0595,
+                        "y": 62.4365
+                    },
+                    "uuid": "3a8d7934-c915-436a-b010-20b31b21eab4"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "comment": "",
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "PTH pad 39 [GND] of U4",
+                    "pos": {
+                        "x": 144.7595,
+                        "y": 60.3365
+                    },
+                    "uuid": "cbb9ffca-43dc-4c91-af7b-70e8a1c95e79"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "comment": "",
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "PTH pad 39 [GND] of U4",
+                    "pos": {
+                        "x": 144.7595,
+                        "y": 61.7365
+                    },
+                    "uuid": "85eb91a2-cb75-4bab-9bf0-64bc374155ff"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "comment": "",
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "PTH pad 39 [GND] of U4",
+                    "pos": {
+                        "x": 144.7595,
+                        "y": 63.1365
+                    },
+                    "uuid": "61f7cebc-8d3e-49b2-8a54-109de5f5ea4e"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "comment": "",
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "PTH pad 39 [GND] of U4",
+                    "pos": {
+                        "x": 145.4595,
+                        "y": 61.0365
+                    },
+                    "uuid": "067ce827-a4b5-404c-af15-6f253de61ba2"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "comment": "",
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "PTH pad 39 [GND] of U4",
+                    "pos": {
+                        "x": 145.4595,
+                        "y": 62.4365
+                    },
+                    "uuid": "faeecf73-506c-4dbd-8678-1af048e72285"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "comment": "",
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "PTH pad 39 [GND] of U4",
+                    "pos": {
+                        "x": 146.1595,
+                        "y": 60.3365
+                    },
+                    "uuid": "63940b13-d308-4639-898e-52d15b15b216"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "comment": "",
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "PTH pad 39 [GND] of U4",
+                    "pos": {
+                        "x": 146.1595,
+                        "y": 61.7365
+                    },
+                    "uuid": "1a8117c7-f27c-442d-824d-49ee4b33f23e"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "comment": "",
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "PTH pad 39 [GND] of U4",
+                    "pos": {
+                        "x": 146.1595,
+                        "y": 63.1365
+                    },
+                    "uuid": "d39c034a-5d02-4a2f-9140-d3a6aa1a4f07"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "comment": "",
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "PTH pad 39 [GND] of U4",
+                    "pos": {
+                        "x": 146.8595,
+                        "y": 61.0365
+                    },
+                    "uuid": "d0e2bab0-e44c-428d-9eae-874d4028beca"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "comment": "",
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "PTH pad 39 [GND] of U4",
+                    "pos": {
+                        "x": 146.8595,
+                        "y": 62.4365
+                    },
+                    "uuid": "2a72fb3e-46bd-46a4-940e-5eb2d9ddaf04"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clearance",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Value field of U2 (EL817)",
+                    "pos": {
+                        "x": 95.0,
+                        "y": 66.77
+                    },
+                    "uuid": "e8710419-927c-4e66-bf79-7dcb9b52751d"
+                },
+                {
+                    "description": "Segment on F.Silkscreen",
+                    "pos": {
+                        "x": 95.0,
+                        "y": 80.0
+                    },
+                    "uuid": "f5f7e026-95ea-4e01-a456-2ba484a7e150"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clearance",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment of U2 on F.Silkscreen",
+                    "pos": {
+                        "x": 92.99,
+                        "y": 61.61
+                    },
+                    "uuid": "6bf1d85a-25ac-49b5-ad8c-17e458cbfaf6"
+                },
+                {
+                    "description": "Segment on F.Silkscreen",
+                    "pos": {
+                        "x": 95.0,
+                        "y": 80.0
+                    },
+                    "uuid": "f5f7e026-95ea-4e01-a456-2ba484a7e150"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clearance",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment of U2 on F.Silkscreen",
+                    "pos": {
+                        "x": 97.01,
+                        "y": 65.93
+                    },
+                    "uuid": "cbf4362d-57a7-4d63-97bc-fa52ef90abd0"
+                },
+                {
+                    "description": "Segment on F.Silkscreen",
+                    "pos": {
+                        "x": 95.0,
+                        "y": 80.0
+                    },
+                    "uuid": "f5f7e026-95ea-4e01-a456-2ba484a7e150"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clearance",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on F.Silkscreen",
+                    "pos": {
+                        "x": 92.5,
+                        "y": 86.5
+                    },
+                    "uuid": "35235f13-d5d1-45e3-9b01-86eb09da33a3"
+                },
+                {
+                    "description": "Segment of U3 on F.Silkscreen",
+                    "pos": {
+                        "x": 54.14,
+                        "y": 102.97
+                    },
+                    "uuid": "ac8c12f2-8d99-4d9d-aad0-b8544c983793"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clearance",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment on F.Silkscreen",
+                    "pos": {
+                        "x": 92.5,
+                        "y": 86.5
+                    },
+                    "uuid": "35235f13-d5d1-45e3-9b01-86eb09da33a3"
+                },
+                {
+                    "description": "Segment of U3 on F.Silkscreen",
+                    "pos": {
+                        "x": 76.86,
+                        "y": 65.95
+                    },
+                    "uuid": "d70f7055-095f-4077-8112-0d7f9e2d80f0"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clearance",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment of K1 on F.Silkscreen",
+                    "pos": {
+                        "x": 81.65,
+                        "y": 76.09
+                    },
+                    "uuid": "35069463-5f90-4f48-b402-27e87af4e3d8"
+                },
+                {
+                    "description": "Segment on F.Silkscreen",
+                    "pos": {
+                        "x": 92.5,
+                        "y": 86.5
+                    },
+                    "uuid": "35235f13-d5d1-45e3-9b01-86eb09da33a3"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clearance",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Segment of K1 on F.Silkscreen",
+                    "pos": {
+                        "x": 87.15,
+                        "y": 100.59
+                    },
+                    "uuid": "2ae77da9-e025-432b-b573-6c298d4dc904"
+                },
+                {
+                    "description": "Segment on F.Silkscreen",
+                    "pos": {
+                        "x": 92.5,
+                        "y": 86.5
+                    },
+                    "uuid": "35235f13-d5d1-45e3-9b01-86eb09da33a3"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        }
+    ]
+}

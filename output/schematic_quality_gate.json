@@ -1,0 +1,41 @@
+{
+    "$schema": "https://schemas.kicad.org/erc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-06-03T04:59:14",
+    "ignored_checks": [
+        {
+            "description": "Input Power pin not driven by any Output Power pins",
+            "key": "power_pin_not_driven"
+        },
+        {
+            "description": "Four connection points are joined together",
+            "key": "four_way_junction"
+        },
+        {
+            "description": "SPICE model issue",
+            "key": "simulation_model_issue"
+        },
+        {
+            "description": "Symbol doesn't match copy in library",
+            "key": "lib_symbol_mismatch"
+        },
+        {
+            "description": "Footprint link issue",
+            "key": "footprint_link_issues"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.0.3",
+    "sheets": [
+        {
+            "path": "/",
+            "uuid_path": "/8fa12040-b3d8-4f13-b02e-6c4ba5cdd128",
+            "violations": []
+        }
+    ],
+    "source": "Sprinkler System.kicad_sch"
+}
