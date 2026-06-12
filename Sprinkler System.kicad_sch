@@ -10865,7 +10865,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_Phoenix_MC:PhoenixContact_MC_1,5_3-G-3.81_1x03_P3.81mm_Horizontal"
+		(property "Footprint" "Sprinkler System:PhoenixContact_MSTBA_2,5_3-G-5,08_1x03_P5.08mm_Horizontal_EdgeClip"
 			(at 20.32 29.21 0)
 			(hide yes)
 			(show_name no)
