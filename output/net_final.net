@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "Z:\\My Documents\\Hardware\\Sprinkler System\\Sprinkler System.kicad_sch")
-		(date "2026-06-13T18:16:27")
+		(date "2026-06-13T18:43:20")
 		(tool "Eeschema 10.0.3")
 		(sheet
 			(number "1")
@@ -418,120 +418,6 @@
 				(tstamps "/")
 			)
 			(tstamps "3fa8dc9c-dd80-41fe-b42d-8fbe032c8295")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-					)
-				)
-			)
-		)
-		(comp
-			(ref "C8")
-			(value "100n")
-			(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
-			(description "U6 VCCA decoupling (DNP)")
-			(fields
-				(field
-					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "U6 VCCA decoupling (DNP)")
-			)
-			(libsource
-				(lib "Device")
-				(part "C_Small")
-				(description "Unpolarized capacitor, small symbol")
-			)
-			(property
-				(name "Sheetname")
-				(value "")
-			)
-			(property
-				(name "Sheetfile")
-				(value "Sprinkler System.kicad_sch")
-			)
-			(property
-				(name "dnp")
-			)
-			(property
-				(name "ki_keywords")
-				(value "capacitor cap")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "C_*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "279b6072-266b-40e7-a489-be82c6d9a0a1")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-					)
-				)
-			)
-		)
-		(comp
-			(ref "C9")
-			(value "100n")
-			(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
-			(description "U6 VCCB decoupling (DNP)")
-			(fields
-				(field
-					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "U6 VCCB decoupling (DNP)")
-			)
-			(libsource
-				(lib "Device")
-				(part "C_Small")
-				(description "Unpolarized capacitor, small symbol")
-			)
-			(property
-				(name "Sheetname")
-				(value "")
-			)
-			(property
-				(name "Sheetfile")
-				(value "Sprinkler System.kicad_sch")
-			)
-			(property
-				(name "dnp")
-			)
-			(property
-				(name "ki_keywords")
-				(value "capacitor cap")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "C_*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "1ed28c3e-a5a5-43d6-99ba-c9cf0ebe7cb8")
 			(units
 				(unit
 					(name "A")
@@ -1780,7 +1666,7 @@
 			(ref "JP1")
 			(value "I2C_VCC")
 			(footprint "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm_NumberLabels")
-			(description "J6 supply select: 1-2=3V3 (default), 2-3=5V")
+			(description "J6 supply select: 1-2=3V3 (default bridged), 2-3=5V")
 			(fields
 				(field
 					(name "Footprint") "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm_NumberLabels")
@@ -1788,7 +1674,7 @@
 					(name "Datasheet")
 				)
 				(field
-					(name "Description") "J6 supply select: 1-2=3V3 (default), 2-3=5V")
+					(name "Description") "J6 supply select: 1-2=3V3 (default bridged), 2-3=5V")
 			)
 			(libsource
 				(lib "Jumper")
@@ -1815,7 +1701,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "092b39b0-5ffa-4c4c-ba98-d462467e47b7")
+			(tstamps "3d470131-0b5b-4947-8989-de8e0ac5bdd5")
 			(units
 				(unit
 					(name "A")
@@ -1828,114 +1714,6 @@
 						)
 						(pin
 							(num "3")
-						)
-					)
-				)
-			)
-		)
-		(comp
-			(ref "JP2")
-			(value "SDA_byp")
-			(footprint "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm")
-			(description "SDA bypass: bridged=direct (default), open=via U6")
-			(fields
-				(field
-					(name "Footprint") "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm")
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "SDA bypass: bridged=direct (default), open=via U6")
-			)
-			(libsource
-				(lib "Jumper")
-				(part "SolderJumper_2_Bridged")
-				(description "Solder Jumper, 2-pole, closed/bridged")
-			)
-			(property
-				(name "Sheetname")
-				(value "")
-			)
-			(property
-				(name "Sheetfile")
-				(value "Sprinkler System.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "solder jumper SPST")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "SolderJumper*Bridged*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "0c691aea-4be9-4cce-a94f-f48782bb315b")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-					)
-				)
-			)
-		)
-		(comp
-			(ref "JP3")
-			(value "SCL_byp")
-			(footprint "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm")
-			(description "SCL bypass: bridged=direct (default), open=via U6")
-			(fields
-				(field
-					(name "Footprint") "Jumper:SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm")
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "SCL bypass: bridged=direct (default), open=via U6")
-			)
-			(libsource
-				(lib "Jumper")
-				(part "SolderJumper_2_Bridged")
-				(description "Solder Jumper, 2-pole, closed/bridged")
-			)
-			(property
-				(name "Sheetname")
-				(value "")
-			)
-			(property
-				(name "Sheetfile")
-				(value "Sprinkler System.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "solder jumper SPST")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "SolderJumper*Bridged*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "87f9e881-b6a6-46be-b2f5-c0f60cdea0be")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
 						)
 					)
 				)
@@ -4946,81 +4724,6 @@
 				)
 			)
 		)
-		(comp
-			(ref "U6")
-			(value "TCA9406DC")
-			(footprint "Package_SO:VSSOP-8_2.3x2mm_P0.5mm")
-			(description "I2C level shifter (DNP - bridge JP2/JP3 for direct)")
-			(fields
-				(field
-					(name "Footprint") "Package_SO:VSSOP-8_2.3x2mm_P0.5mm")
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "I2C level shifter (DNP - bridge JP2/JP3 for direct)")
-			)
-			(libsource
-				(lib "Interface")
-				(part "TCA9406DC")
-				(description "2-Bit Bidirectional 1-MHz, I2C Bus and SMBus Voltage-Level Translator With 8-kV HBM ESD")
-			)
-			(property
-				(name "Sheetname")
-				(value "")
-			)
-			(property
-				(name "Sheetfile")
-				(value "Sprinkler System.kicad_sch")
-			)
-			(property
-				(name "dnp")
-			)
-			(property
-				(name "ki_keywords")
-				(value "Bidirectional 1-MHz I2C SMBus Voltage-Level Translator 8kV HBM ESD")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "SSOP*2.95x2.8mm*P0.65mm* VSSOP*2.3x2mm*P0.5mm*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "a8b33f31-59a9-457e-8a06-9cd2f1b20535")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "5")
-						)
-						(pin
-							(num "4")
-						)
-						(pin
-							(num "3")
-						)
-						(pin
-							(num "2")
-						)
-						(pin
-							(num "7")
-						)
-						(pin
-							(num "6")
-						)
-						(pin
-							(num "8")
-						)
-						(pin
-							(num "1")
-						)
-					)
-				)
-			)
-		)
 	)
 	(groups)
 	(variants)
@@ -5735,71 +5438,6 @@
 			)
 		)
 		(libpart
-			(lib "Interface")
-			(part "TCA9406DC")
-			(description "2-Bit Bidirectional 1-MHz, I2C Bus and SMBus Voltage-Level Translator With 8-kV HBM ESD")
-			(docs "www.ti.com/lit/ds/symlink/tca9406.pdf")
-			(footprints
-				(fp "SSOP*2.95x2.8mm*P0.65mm*")
-				(fp "VSSOP*2.3x2mm*P0.5mm*")
-			)
-			(fields
-				(field
-					(name "Reference") "U")
-				(field
-					(name "Value") "TCA9406DC")
-				(field
-					(name "Footprint")
-				)
-				(field
-					(name "Datasheet") "www.ti.com/lit/ds/symlink/tca9406.pdf")
-				(field
-					(name "Description") "2-Bit Bidirectional 1-MHz, I2C Bus and SMBus Voltage-Level Translator With 8-kV HBM ESD")
-			)
-			(pins
-				(pin
-					(num "1")
-					(name "SDA_B")
-					(type "bidirectional")
-				)
-				(pin
-					(num "2")
-					(name "GND")
-					(type "power_in")
-				)
-				(pin
-					(num "3")
-					(name "VCCA")
-					(type "power_in")
-				)
-				(pin
-					(num "4")
-					(name "SDA_A")
-					(type "bidirectional")
-				)
-				(pin
-					(num "5")
-					(name "SCL_A")
-					(type "bidirectional")
-				)
-				(pin
-					(num "6")
-					(name "OE")
-					(type "input")
-				)
-				(pin
-					(num "7")
-					(name "VCCB")
-					(type "power_in")
-				)
-				(pin
-					(num "8")
-					(name "SCL_B")
-					(type "bidirectional")
-				)
-			)
-		)
-		(libpart
 			(lib "Isolator")
 			(part "EL817")
 			(description "DC Optocoupler, Vce 35V, DIP-4")
@@ -5838,40 +5476,6 @@
 				(pin
 					(num "4")
 					(name "")
-					(type "passive")
-				)
-			)
-		)
-		(libpart
-			(lib "Jumper")
-			(part "SolderJumper_2_Bridged")
-			(description "Solder Jumper, 2-pole, closed/bridged")
-			(footprints
-				(fp "SolderJumper*Bridged*")
-			)
-			(fields
-				(field
-					(name "Reference") "JP")
-				(field
-					(name "Value") "SolderJumper_2_Bridged")
-				(field
-					(name "Footprint")
-				)
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "Solder Jumper, 2-pole, closed/bridged")
-			)
-			(pins
-				(pin
-					(num "1")
-					(name "A")
-					(type "passive")
-				)
-				(pin
-					(num "2")
-					(name "B")
 					(type "passive")
 				)
 			)
@@ -6450,10 +6054,6 @@
 			(uri "${KICAD10_SYMBOL_DIR}/Device.kicad_sym")
 		)
 		(library
-			(logical "Interface")
-			(uri "${KICAD10_SYMBOL_DIR}/Interface.kicad_sym")
-		)
-		(library
 			(logical "Isolator")
 			(uri "${KICAD10_SYMBOL_DIR}/Isolator.kicad_sym")
 		)
@@ -6503,11 +6103,6 @@
 			)
 			(node
 				(ref "C6")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
-				(ref "C8")
 				(pin "1")
 				(pintype "passive")
 			)
@@ -6571,18 +6166,6 @@
 				(pin "2")
 				(pinfunction "VDD_2")
 				(pintype "power_in")
-			)
-			(node
-				(ref "U6")
-				(pin "3")
-				(pinfunction "VCCA_3")
-				(pintype "power_in")
-			)
-			(node
-				(ref "U6")
-				(pin "6")
-				(pinfunction "OE_6")
-				(pintype "input")
 			)
 		)
 		(net
@@ -6994,11 +6577,6 @@
 			(name "/J6_VCC")
 			(class "Default")
 			(node
-				(ref "C9")
-				(pin "1")
-				(pintype "passive")
-			)
-			(node
 				(ref "J6")
 				(pin "2")
 				(pinfunction "Pin_2_2")
@@ -7010,44 +6588,15 @@
 				(pinfunction "C_2")
 				(pintype "passive")
 			)
-			(node
-				(ref "U6")
-				(pin "7")
-				(pinfunction "VCCB_7")
-				(pintype "power_in")
-			)
 		)
 		(net
 			(code "21")
-			(name "/SCL_DEV")
+			(name "/SCL")
 			(class "Default")
 			(node
 				(ref "J6")
 				(pin "4")
 				(pinfunction "Pin_4_4")
-				(pintype "passive")
-			)
-			(node
-				(ref "JP3")
-				(pin "2")
-				(pinfunction "B_2")
-				(pintype "passive")
-			)
-			(node
-				(ref "U6")
-				(pin "8")
-				(pinfunction "SCL_B_8")
-				(pintype "bidirectional")
-			)
-		)
-		(net
-			(code "22")
-			(name "/SCL_MCU")
-			(class "Default")
-			(node
-				(ref "JP3")
-				(pin "1")
-				(pinfunction "A_1")
 				(pintype "passive")
 			)
 			(node
@@ -7061,44 +6610,15 @@
 				(pinfunction "IO4_26")
 				(pintype "bidirectional")
 			)
-			(node
-				(ref "U6")
-				(pin "5")
-				(pinfunction "SCL_A_5")
-				(pintype "bidirectional")
-			)
 		)
 		(net
-			(code "23")
-			(name "/SDA_DEV")
+			(code "22")
+			(name "/SDA")
 			(class "Default")
 			(node
 				(ref "J6")
 				(pin "3")
 				(pinfunction "Pin_3_3")
-				(pintype "passive")
-			)
-			(node
-				(ref "JP2")
-				(pin "2")
-				(pinfunction "B_2")
-				(pintype "passive")
-			)
-			(node
-				(ref "U6")
-				(pin "1")
-				(pinfunction "SDA_B_1")
-				(pintype "bidirectional")
-			)
-		)
-		(net
-			(code "24")
-			(name "/SDA_MCU")
-			(class "Default")
-			(node
-				(ref "JP2")
-				(pin "1")
-				(pinfunction "A_1")
 				(pintype "passive")
 			)
 			(node
@@ -7112,15 +6632,9 @@
 				(pinfunction "IO5_29")
 				(pintype "bidirectional")
 			)
-			(node
-				(ref "U6")
-				(pin "4")
-				(pinfunction "SDA_A_4")
-				(pintype "bidirectional")
-			)
 		)
 		(net
-			(code "25")
+			(code "23")
 			(name "/SSR")
 			(class "Supply,Default")
 			(node
@@ -7136,7 +6650,7 @@
 			)
 		)
 		(net
-			(code "26")
+			(code "24")
 			(name "/Sens_24V")
 			(class "Default")
 			(node
@@ -7162,7 +6676,7 @@
 			)
 		)
 		(net
-			(code "27")
+			(code "25")
 			(name "/Zone0")
 			(class "Default")
 			(node
@@ -7179,7 +6693,7 @@
 			)
 		)
 		(net
-			(code "28")
+			(code "26")
 			(name "/Zone1")
 			(class "Default")
 			(node
@@ -7196,7 +6710,7 @@
 			)
 		)
 		(net
-			(code "29")
+			(code "27")
 			(name "/Zone2")
 			(class "Default")
 			(node
@@ -7213,7 +6727,7 @@
 			)
 		)
 		(net
-			(code "30")
+			(code "28")
 			(name "/Zone3")
 			(class "Default")
 			(node
@@ -7230,7 +6744,7 @@
 			)
 		)
 		(net
-			(code "31")
+			(code "29")
 			(name "/Zone4")
 			(class "Default")
 			(node
@@ -7247,7 +6761,7 @@
 			)
 		)
 		(net
-			(code "32")
+			(code "30")
 			(name "/Zone5")
 			(class "Default")
 			(node
@@ -7264,7 +6778,7 @@
 			)
 		)
 		(net
-			(code "33")
+			(code "31")
 			(name "24VAC")
 			(class "24VAC,Default")
 			(node
@@ -7370,7 +6884,7 @@
 			)
 		)
 		(net
-			(code "34")
+			(code "32")
 			(name "24V_Comm")
 			(class "24VAC,Default")
 			(node
@@ -7422,7 +6936,7 @@
 			)
 		)
 		(net
-			(code "35")
+			(code "33")
 			(name "24V_S0")
 			(class "24VAC,Default")
 			(node
@@ -7448,7 +6962,7 @@
 			)
 		)
 		(net
-			(code "36")
+			(code "34")
 			(name "24V_S1")
 			(class "24VAC,Default")
 			(node
@@ -7474,7 +6988,7 @@
 			)
 		)
 		(net
-			(code "37")
+			(code "35")
 			(name "24V_S2")
 			(class "24VAC,Default")
 			(node
@@ -7500,7 +7014,7 @@
 			)
 		)
 		(net
-			(code "38")
+			(code "36")
 			(name "24V_S3")
 			(class "24VAC,Default")
 			(node
@@ -7526,7 +7040,7 @@
 			)
 		)
 		(net
-			(code "39")
+			(code "37")
 			(name "24V_S4")
 			(class "24VAC,Default")
 			(node
@@ -7552,7 +7066,7 @@
 			)
 		)
 		(net
-			(code "40")
+			(code "38")
 			(name "24V_S5")
 			(class "24VAC,Default")
 			(node
@@ -7578,7 +7092,7 @@
 			)
 		)
 		(net
-			(code "41")
+			(code "39")
 			(name "24V_Supply")
 			(class "24VAC,Default")
 			(node
@@ -7594,7 +7108,7 @@
 			)
 		)
 		(net
-			(code "42")
+			(code "40")
 			(name "GND")
 			(class "Default")
 			(node
@@ -7629,16 +7143,6 @@
 			)
 			(node
 				(ref "C7")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "C8")
-				(pin "2")
-				(pintype "passive")
-			)
-			(node
-				(ref "C9")
 				(pin "2")
 				(pintype "passive")
 			)
@@ -7759,15 +7263,9 @@
 				(pinfunction "GND_9")
 				(pintype "power_in")
 			)
-			(node
-				(ref "U6")
-				(pin "2")
-				(pinfunction "GND_2")
-				(pintype "power_in")
-			)
 		)
 		(net
-			(code "43")
+			(code "41")
 			(name "L")
 			(class "Mains,Default")
 			(node
@@ -7793,7 +7291,7 @@
 			)
 		)
 		(net
-			(code "44")
+			(code "42")
 			(name "L_SW")
 			(class "Mains,Default")
 			(node
@@ -7814,7 +7312,7 @@
 			)
 		)
 		(net
-			(code "45")
+			(code "43")
 			(name "L_Supply")
 			(class "Mains,Default")
 			(node
@@ -7830,7 +7328,7 @@
 			)
 		)
 		(net
-			(code "46")
+			(code "44")
 			(name "Net-(C20-Pad2)")
 			(class "Default")
 			(node
@@ -7845,7 +7343,7 @@
 			)
 		)
 		(net
-			(code "47")
+			(code "45")
 			(name "Net-(C21-Pad2)")
 			(class "Default")
 			(node
@@ -7860,7 +7358,7 @@
 			)
 		)
 		(net
-			(code "48")
+			(code "46")
 			(name "Net-(C22-Pad2)")
 			(class "Default")
 			(node
@@ -7875,7 +7373,7 @@
 			)
 		)
 		(net
-			(code "49")
+			(code "47")
 			(name "Net-(C23-Pad2)")
 			(class "Default")
 			(node
@@ -7890,7 +7388,7 @@
 			)
 		)
 		(net
-			(code "50")
+			(code "48")
 			(name "Net-(C24-Pad2)")
 			(class "Default")
 			(node
@@ -7905,7 +7403,7 @@
 			)
 		)
 		(net
-			(code "51")
+			(code "49")
 			(name "Net-(C25-Pad2)")
 			(class "Default")
 			(node
@@ -7920,7 +7418,7 @@
 			)
 		)
 		(net
-			(code "52")
+			(code "50")
 			(name "Net-(D1-K)")
 			(class "Default")
 			(node
@@ -7936,7 +7434,7 @@
 			)
 		)
 		(net
-			(code "53")
+			(code "51")
 			(name "Net-(LED1-K)")
 			(class "Default")
 			(node
@@ -7952,7 +7450,7 @@
 			)
 		)
 		(net
-			(code "54")
+			(code "52")
 			(name "Net-(LED2-K)")
 			(class "Default")
 			(node
@@ -7968,7 +7466,7 @@
 			)
 		)
 		(net
-			(code "55")
+			(code "53")
 			(name "Net-(R1-Pad1)")
 			(class "Default")
 			(node
@@ -7983,7 +7481,7 @@
 			)
 		)
 		(net
-			(code "56")
+			(code "54")
 			(name "Net-(R4-Pad1)")
 			(class "Default")
 			(node
@@ -7999,7 +7497,7 @@
 			)
 		)
 		(net
-			(code "57")
+			(code "55")
 			(name "Net-(R8-Pad1)")
 			(class "Default")
 			(node
@@ -8015,7 +7513,7 @@
 			)
 		)
 		(net
-			(code "58")
+			(code "56")
 			(name "Neut")
 			(class "Mains,Default")
 			(node
@@ -8048,7 +7546,7 @@
 			)
 		)
 		(net
-			(code "59")
+			(code "57")
 			(name "unconnected-(K20-Pad4)")
 			(class "Default")
 			(node
@@ -8058,7 +7556,7 @@
 			)
 		)
 		(net
-			(code "60")
+			(code "58")
 			(name "unconnected-(K21-Pad4)")
 			(class "Default")
 			(node
@@ -8068,7 +7566,7 @@
 			)
 		)
 		(net
-			(code "61")
+			(code "59")
 			(name "unconnected-(K22-Pad4)")
 			(class "Default")
 			(node
@@ -8078,7 +7576,7 @@
 			)
 		)
 		(net
-			(code "62")
+			(code "60")
 			(name "unconnected-(K23-Pad4)")
 			(class "Default")
 			(node
@@ -8088,7 +7586,7 @@
 			)
 		)
 		(net
-			(code "63")
+			(code "61")
 			(name "unconnected-(K24-Pad4)")
 			(class "Default")
 			(node
@@ -8098,7 +7596,7 @@
 			)
 		)
 		(net
-			(code "64")
+			(code "62")
 			(name "unconnected-(K25-Pad4)")
 			(class "Default")
 			(node
@@ -8108,7 +7606,7 @@
 			)
 		)
 		(net
-			(code "65")
+			(code "63")
 			(name "unconnected-(U4-IO12-Pad14)")
 			(class "Default")
 			(node
@@ -8119,7 +7617,7 @@
 			)
 		)
 		(net
-			(code "66")
+			(code "64")
 			(name "unconnected-(U4-IO13-Pad16)")
 			(class "Default")
 			(node
@@ -8130,7 +7628,7 @@
 			)
 		)
 		(net
-			(code "67")
+			(code "65")
 			(name "unconnected-(U4-IO14-Pad13)")
 			(class "Default")
 			(node
@@ -8141,7 +7639,7 @@
 			)
 		)
 		(net
-			(code "68")
+			(code "66")
 			(name "unconnected-(U4-IO15-Pad23)")
 			(class "Default")
 			(node
@@ -8152,7 +7650,7 @@
 			)
 		)
 		(net
-			(code "69")
+			(code "67")
 			(name "unconnected-(U4-IO26-Pad11)")
 			(class "Default")
 			(node
@@ -8163,7 +7661,7 @@
 			)
 		)
 		(net
-			(code "70")
+			(code "68")
 			(name "unconnected-(U4-IO27-Pad12)")
 			(class "Default")
 			(node
@@ -8174,7 +7672,7 @@
 			)
 		)
 		(net
-			(code "71")
+			(code "69")
 			(name "unconnected-(U4-NC-Pad32)")
 			(class "Default")
 			(node
@@ -8185,7 +7683,7 @@
 			)
 		)
 		(net
-			(code "72")
+			(code "70")
 			(name "unconnected-(U4-SCK{slash}CLK-Pad20)")
 			(class "Default")
 			(node
@@ -8196,7 +7694,7 @@
 			)
 		)
 		(net
-			(code "73")
+			(code "71")
 			(name "unconnected-(U4-SCS{slash}CMD-Pad19)")
 			(class "Default")
 			(node
@@ -8207,7 +7705,7 @@
 			)
 		)
 		(net
-			(code "74")
+			(code "72")
 			(name "unconnected-(U4-SDI{slash}SD1-Pad22)")
 			(class "Default")
 			(node
@@ -8218,7 +7716,7 @@
 			)
 		)
 		(net
-			(code "75")
+			(code "73")
 			(name "unconnected-(U4-SDO{slash}SD0-Pad21)")
 			(class "Default")
 			(node
@@ -8229,7 +7727,7 @@
 			)
 		)
 		(net
-			(code "76")
+			(code "74")
 			(name "unconnected-(U4-SENSOR_VN-Pad5)")
 			(class "Default")
 			(node
@@ -8240,7 +7738,7 @@
 			)
 		)
 		(net
-			(code "77")
+			(code "75")
 			(name "unconnected-(U4-SENSOR_VP-Pad4)")
 			(class "Default")
 			(node
@@ -8251,7 +7749,7 @@
 			)
 		)
 		(net
-			(code "78")
+			(code "76")
 			(name "unconnected-(U4-SHD{slash}SD2-Pad17)")
 			(class "Default")
 			(node
@@ -8262,7 +7760,7 @@
 			)
 		)
 		(net
-			(code "79")
+			(code "77")
 			(name "unconnected-(U4-SWP{slash}SD3-Pad18)")
 			(class "Default")
 			(node
@@ -8273,7 +7771,7 @@
 			)
 		)
 		(net
-			(code "80")
+			(code "78")
 			(name "unconnected-(U5-I1-Pad1)")
 			(class "Default")
 			(node
@@ -8284,7 +7782,7 @@
 			)
 		)
 		(net
-			(code "81")
+			(code "79")
 			(name "unconnected-(U5-O1-Pad18)")
 			(class "Default")
 			(node

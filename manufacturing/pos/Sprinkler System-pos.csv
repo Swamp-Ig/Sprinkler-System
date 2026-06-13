@@ -1,8 +1,12 @@
 Ref,Val,Package,PosX,PosY,Rot,Side
+"D2","SS34","D_SMA",170.000000,-49.971500,0.000000,bottom
 "C1","10u","C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",127.006500,-62.911500,0.000000,top
 "C2","22u","C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",132.122000,-62.911500,0.000000,top
 "C3","22u","C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",100.000000,-71.500000,-90.000000,top
 "C4","10u","C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",198.000000,-51.500000,180.000000,top
+"C5","100n","C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",136.100000,-57.600000,90.000000,top
+"C6","100n","C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",136.100000,-53.550000,90.000000,top
+"C7","220u","CP_Radial_D6.3mm_P2.50mm",74.500000,-60.000000,180.000000,top
 "C20","100n","C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",101.372500,-107.697500,0.000000,top
 "C21","100n","C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",121.692500,-107.697500,0.000000,top
 "C22","100n","C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",142.012500,-107.697500,0.000000,top
@@ -12,8 +16,8 @@ Ref,Val,Package,PosX,PosY,Rot,Side
 "D1","1N4148","D_0805_2012Metric_Pad1.15x1.40mm_HandSolder",90.000000,-71.500000,90.000000,top
 "F1","1A","Fuseholder_5x20mm_15mm_Pins",71.000000,-125.000000,90.000000,top
 "F2","2A","Fuseholder_5x20mm_15mm_Pins",83.000000,-68.100000,90.000000,top
-"J1","Main Supply","PhoenixContact_MC_1,5_3-G-3.81_1x03_P3.81mm_Horizontal",82.000000,-123.000000,0.000000,top
-"J2","XFMR_Out","TerminalBlock_Phoenix_PT-1,5-2-5.0-H_1x02_P5.00mm_Horizontal",59.500000,-111.000000,-90.000000,top
+"J1","Main Supply","PhoenixContact_MSTBA_2,5_3-G-5,08_1x03_P5.08mm_Horizontal_EdgeClip",82.000000,-120.500000,0.000000,top
+"J2","XFMR_Out","TerminalBlock_Phoenix_PT-1,5-2-5.0-H_1x02_P5.00mm_Horizontal",59.500000,-106.500000,-90.000000,top
 "J3","XFMR_In","TerminalBlock_Phoenix_PT-1,5-2-5.0-H_1x02_P5.00mm_Horizontal",62.000000,-57.000000,-90.000000,top
 "J4","Conn_Button","JST_XH_B6B-XH-A_1x06_P2.50mm_Vertical",206.545000,-54.021500,-90.000000,top
 "J5","UART0","JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical",181.376500,-63.521500,0.000000,top
@@ -53,6 +57,8 @@ Ref,Val,Package,PosX,PosY,Rot,Side
 "R23","100","R_0805_2012Metric_Pad1.20x1.40mm_HandSolder",167.450000,-107.697500,0.000000,top
 "R24","100","R_0805_2012Metric_Pad1.20x1.40mm_HandSolder",187.770000,-107.697500,0.000000,top
 "R25","100","R_0805_2012Metric_Pad1.20x1.40mm_HandSolder",208.090000,-107.697500,0.000000,top
+"RV1","10D471K","RV_Disc_D12mm_W3.9mm_P7.5mm_EdgeClip",55.800000,-117.500000,0.000000,top
+"RV2","10D471K","RV_Disc_D12mm_W3.9mm_P7.5mm",79.300000,-105.700000,-90.000000,top
 "RV20","68V","RV_Disc_D15.5mm_W5.4mm_P7.5mm",99.990000,-112.917500,0.000000,top
 "RV21","68V","RV_Disc_D15.5mm_W5.4mm_P7.5mm",120.310000,-112.917500,0.000000,top
 "RV22","68V","RV_Disc_D15.5mm_W5.4mm_P7.5mm",140.630000,-112.917500,0.000000,top
