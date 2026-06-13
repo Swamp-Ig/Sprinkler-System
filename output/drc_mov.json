@@ -1,0 +1,154 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-06-13T08:17:35",
+    "ignored_checks": [],
+    "included_severities": [
+        "error",
+        "warning"
+    ],
+    "kicad_version": "10.0.3",
+    "schematic_parity": [],
+    "source": "Sprinkler System.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Segment on Margin",
+                    "pos": {
+                        "x": 53.5,
+                        "y": 127.0
+                    },
+                    "uuid": "71113c84-deed-40c8-9ee8-d6de99528442"
+                },
+                {
+                    "description": "Segment of RV2 on F.Silkscreen",
+                    "pos": {
+                        "x": 80.55,
+                        "y": 103.45
+                    },
+                    "uuid": "3850b183-790b-4279-87e2-6fc1dc656152"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Segment on Margin",
+                    "pos": {
+                        "x": 53.5,
+                        "y": 127.0
+                    },
+                    "uuid": "71113c84-deed-40c8-9ee8-d6de99528442"
+                },
+                {
+                    "description": "Segment of RV2 on F.Silkscreen",
+                    "pos": {
+                        "x": 76.65,
+                        "y": 103.45
+                    },
+                    "uuid": "03346d9d-d4bd-4dfc-8af1-9465b9c71663"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of U3 on F.Silkscreen",
+                    "pos": {
+                        "x": 62.704,
+                        "y": 102.97
+                    },
+                    "uuid": "06725f08-8fed-48ae-99f3-eff03884a095"
+                },
+                {
+                    "description": "Value field of J2 (XFMR_Out)",
+                    "pos": {
+                        "x": 59.3675,
+                        "y": 102.5
+                    },
+                    "uuid": "b3bd815f-4a53-4451-a50c-74ec0e60bc1a"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U3 on F.Silkscreen",
+                    "pos": {
+                        "x": 63.0,
+                        "y": 102.97
+                    },
+                    "uuid": "396d09d5-f33e-4c5d-9dbc-98cce1939d92"
+                },
+                {
+                    "description": "Value field of J2 (XFMR_Out)",
+                    "pos": {
+                        "x": 59.3675,
+                        "y": 102.5
+                    },
+                    "uuid": "b3bd815f-4a53-4451-a50c-74ec0e60bc1a"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of RV2 on F.Silkscreen",
+                    "pos": {
+                        "x": 80.55,
+                        "y": 103.45
+                    },
+                    "uuid": "3850b183-790b-4279-87e2-6fc1dc656152"
+                },
+                {
+                    "description": "PCB text 'N' on F.Silkscreen",
+                    "pos": {
+                        "x": 64.25,
+                        "y": 115.75
+                    },
+                    "uuid": "b9ac7963-9593-44c5-a8b9-ec98597be31b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Segment of RV2 on F.Silkscreen",
+                    "pos": {
+                        "x": 80.55,
+                        "y": 115.45
+                    },
+                    "uuid": "2050e325-65de-42a2-9ea7-739e88ce5d9f"
+                },
+                {
+                    "description": "PCB text 'N' on F.Silkscreen",
+                    "pos": {
+                        "x": 64.25,
+                        "y": 115.75
+                    },
+                    "uuid": "b9ac7963-9593-44c5-a8b9-ec98597be31b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        }
+    ]
+}

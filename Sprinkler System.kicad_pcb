@@ -1799,11 +1799,11 @@
 	(footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-2-5.0-H_1x02_P5.00mm_Horizontal"
 		(layer "F.Cu")
 		(uuid "1b6b33bf-ea09-4c01-87db-5b4966873829")
-		(at 59.5 111 -90)
+		(at 59.5 106.5 -90)
 		(descr "Terminal Block Phoenix PT-1,5-2-5.0-H, 2 pins, pitch 5mm, size 10x9mm, drill diameter 1.3mm, pad diameter 2.6mm, http://www.mouser.com/ds/2/324/ItemDetail_1935161-922578.pdf")
 		(tags "THT Terminal Block Phoenix PT-1,5-2-5.0-H pitch 5mm size 10x9mm drill 1.3mm pad 2.6mm")
 		(property "Reference" "J2"
-			(at 9 0.1325 0)
+			(at 8.9 4.6 0)
 			(layer "F.SilkS")
 			(uuid "0f7f6118-b775-4976-8b35-9f52b511eb78")
 			(effects
@@ -1814,7 +1814,7 @@
 			)
 		)
 		(property "Value" "XFMR_Out"
-			(at -4 0.1325 0)
+			(at 8.9 -1 0)
 			(layer "F.SilkS")
 			(uuid "b3bd815f-4a53-4451-a50c-74ec0e60bc1a")
 			(effects
@@ -2257,7 +2257,7 @@
 		(descr "Littelfuse clips, https://www.littelfuse.com/~/media/electronics/datasheets/fuse_clips/littelfuse_fuse_clip_100_445_030_520_datasheet.pdf.pdf")
 		(tags "Fuseholder clips")
 		(property "Reference" "F1"
-			(at 11.6 6.245 270)
+			(at 2.9 -8 270)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "62617130-d939-4227-9924-1112b93925a1")
@@ -17285,6 +17285,426 @@
 			)
 		)
 	)
+	(footprint "Sprinkler System:RV_Disc_D12mm_W3.9mm_P7.5mm_EdgeClip"
+		(layer "F.Cu")
+		(uuid "1d12c795-75c1-446b-a8b0-29ecb20fb952")
+		(at 55.8 117.5)
+		(descr "Varistor, diameter 12mm, width 3.9mm, pitch 7.5mm")
+		(tags "varistor SIOV")
+		(property "Reference" "RV1"
+			(at 3.75 5.9 0)
+			(layer "F.SilkS")
+			(uuid "01ba93f3-56b8-4c49-9359-232873ef668a")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "10D471K"
+			(at 3.75 4.6 0)
+			(layer "F.Fab")
+			(uuid "d3843d77-3e40-4e05-bbb5-680426b68754")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "bdf8307a-6c45-46fc-aa7f-50ef0a95d554")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Voltage dependent resistor, 470V varistor voltage, 10mm disc"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "2791a0b2-c7a4-4652-bd3f-005ee28ca954")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(path "/c41816fb-7709-4ea6-b1d0-0cbec2b000a1")
+		(sheetname "/")
+		(sheetfile "Sprinkler System.kicad_sch")
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -1.8 -1.25)
+			(end -1.8 2.65)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "b27613b6-eaea-4f67-ba32-218b878420dc")
+		)
+		(fp_line
+			(start -1.8 -1.25)
+			(end 9.75 -1.25)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "3850b183-790b-4279-87e2-6fc1dc656152")
+		)
+		(fp_line
+			(start -1.8 2.65)
+			(end 9.75 2.65)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "03346d9d-d4bd-4dfc-8af1-9465b9c71663")
+		)
+		(fp_line
+			(start 9.75 -1.25)
+			(end 9.75 2.65)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "2050e325-65de-42a2-9ea7-739e88ce5d9f")
+		)
+		(fp_line
+			(start -2.5 -1.5)
+			(end -2.5 2.9)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "1b59acf3-164e-46df-af8d-879da86ab15f")
+		)
+		(fp_line
+			(start -2.5 -1.5)
+			(end 10 -1.5)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "c4474426-dd10-41a2-9676-7156c48879b0")
+		)
+		(fp_line
+			(start -2.5 2.9)
+			(end 10 2.9)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "038ddbed-b77e-4a2a-a6ea-53e7dc5cbc60")
+		)
+		(fp_line
+			(start 10 -1.5)
+			(end 10 2.9)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "01576260-8270-449e-9feb-2a3c7bbc0f11")
+		)
+		(fp_line
+			(start -2.25 -1.25)
+			(end -2.25 2.65)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "a1e66ae6-ca74-4e16-a6b3-830471e071a4")
+		)
+		(fp_line
+			(start -2.25 -1.25)
+			(end 9.75 -1.25)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "2a114028-1c7e-44f9-9a34-ccd8e2d6142b")
+		)
+		(fp_line
+			(start -2.25 2.65)
+			(end 9.75 2.65)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "bb2c9a58-e8f1-4a16-8201-a96ef7032c1c")
+		)
+		(fp_line
+			(start 9.75 -1.25)
+			(end 9.75 2.65)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "6da4f96a-b1ba-4a2e-9fbd-da6e5191c9f2")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 3.75 0.7 0)
+			(layer "F.Fab")
+			(uuid "9599fe13-577d-4840-89cf-99bd36ccf44e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole circle
+			(at 0 0)
+			(size 1.8 1.8)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(uuid "b7024213-5a64-4aec-9d66-d5ddbdb30ae6")
+			(net "L_SW")
+			(pintype "passive")
+			(uuid "e926fafc-c824-47b0-b378-ef7ed182d897")
+		)
+		(pad "2" thru_hole circle
+			(at 7.5 1.4)
+			(size 1.8 1.8)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(uuid "9a148006-32d6-4978-bd5c-e6ea66026174")
+			(net "Neut")
+			(pintype "passive")
+			(uuid "9b77067f-2da3-4152-ae7b-40c4cd357f35")
+		)
+		(embedded_fonts no)
+	)
+	(footprint "Varistor:RV_Disc_D12mm_W3.9mm_P7.5mm"
+		(layer "F.Cu")
+		(uuid "e6017e6f-ab66-4a76-ab3d-52f27577a8cb")
+		(at 79.3 105.7 270)
+		(descr "Varistor, diameter 12mm, width 3.9mm, pitch 7.5mm")
+		(tags "varistor SIOV")
+		(property "Reference" "RV2"
+			(at 3.75 -3.3 90)
+			(layer "F.SilkS")
+			(uuid "dcd987af-0f0f-4142-8e4c-9b8d8108270d")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Value" "10D471K"
+			(at 3.75 4.6 90)
+			(layer "F.Fab")
+			(uuid "3824cd4f-031b-4207-a6b8-718c4e9828f3")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "055eee92-42d4-4b84-b57f-b26790c88d17")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Voltage dependent resistor, 470V varistor voltage, 10mm disc"
+			(at 0 0 0)
+			(layer "F.Fab")
+			(hide yes)
+			(uuid "98b04c85-c6dd-4d73-9b83-78d6035318e5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(path "/15af6905-0d27-40e5-ab42-b21674fb68ed")
+		(sheetname "/")
+		(sheetfile "Sprinkler System.kicad_sch")
+		(attr through_hole)
+		(duplicate_pad_numbers_are_jumpers no)
+		(fp_line
+			(start -2.25 -1.25)
+			(end -2.25 2.65)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "b27613b6-eaea-4f67-ba32-218b878420dc")
+		)
+		(fp_line
+			(start -2.25 -1.25)
+			(end 9.75 -1.25)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "3850b183-790b-4279-87e2-6fc1dc656152")
+		)
+		(fp_line
+			(start -2.25 2.65)
+			(end 9.75 2.65)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "03346d9d-d4bd-4dfc-8af1-9465b9c71663")
+		)
+		(fp_line
+			(start 9.75 -1.25)
+			(end 9.75 2.65)
+			(stroke
+				(width 0.15)
+				(type solid)
+			)
+			(layer "F.SilkS")
+			(uuid "2050e325-65de-42a2-9ea7-739e88ce5d9f")
+		)
+		(fp_line
+			(start -2.5 -1.5)
+			(end -2.5 2.9)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "1b59acf3-164e-46df-af8d-879da86ab15f")
+		)
+		(fp_line
+			(start -2.5 -1.5)
+			(end 10 -1.5)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "c4474426-dd10-41a2-9676-7156c48879b0")
+		)
+		(fp_line
+			(start -2.5 2.9)
+			(end 10 2.9)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "038ddbed-b77e-4a2a-a6ea-53e7dc5cbc60")
+		)
+		(fp_line
+			(start 10 -1.5)
+			(end 10 2.9)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "F.CrtYd")
+			(uuid "01576260-8270-449e-9feb-2a3c7bbc0f11")
+		)
+		(fp_line
+			(start -2.25 -1.25)
+			(end -2.25 2.65)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "a1e66ae6-ca74-4e16-a6b3-830471e071a4")
+		)
+		(fp_line
+			(start -2.25 -1.25)
+			(end 9.75 -1.25)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "2a114028-1c7e-44f9-9a34-ccd8e2d6142b")
+		)
+		(fp_line
+			(start -2.25 2.65)
+			(end 9.75 2.65)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "bb2c9a58-e8f1-4a16-8201-a96ef7032c1c")
+		)
+		(fp_line
+			(start 9.75 -1.25)
+			(end 9.75 2.65)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "F.Fab")
+			(uuid "6da4f96a-b1ba-4a2e-9fbd-da6e5191c9f2")
+		)
+		(fp_text user "${REFERENCE}"
+			(at 3.75 0.7 0)
+			(layer "F.Fab")
+			(uuid "9599fe13-577d-4840-89cf-99bd36ccf44e")
+			(effects
+				(font
+					(size 1 1)
+					(thickness 0.15)
+				)
+			)
+		)
+		(pad "1" thru_hole circle
+			(at 0 0 270)
+			(size 1.8 1.8)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(uuid "b7024213-5a64-4aec-9d66-d5ddbdb30ae6")
+			(net "L")
+			(pintype "passive")
+			(uuid "53fa5821-c268-4b7c-a417-e89adcb72c4b")
+		)
+		(pad "2" thru_hole circle
+			(at 7.5 1.4 270)
+			(size 1.8 1.8)
+			(drill 0.8)
+			(layers "*.Cu" "*.Mask")
+			(remove_unused_layers no)
+			(uuid "9a148006-32d6-4978-bd5c-e6ea66026174")
+			(net "Neut")
+			(pintype "passive")
+			(uuid "78c5073c-d6a8-4e84-aee4-53df97d182d0")
+		)
+		(embedded_fonts no)
+	)
 	(gr_line
 		(start 92.5 86.5)
 		(end 54 86.5)
@@ -17757,7 +18177,7 @@
 		)
 	)
 	(gr_text "N"
-		(at 64.25 115.75 270)
+		(at 64.25 111.25 270)
 		(layer "F.SilkS")
 		(uuid "b9ac7963-9593-44c5-a8b9-ec98597be31b")
 		(effects
@@ -17769,7 +18189,7 @@
 		)
 	)
 	(gr_text "L"
-		(at 64.25 111 270)
+		(at 64.25 106.5 270)
 		(layer "F.SilkS")
 		(uuid "4a427816-380c-4605-9f34-648120af29db")
 		(effects
@@ -19004,8 +19424,8 @@
 		(uuid "2da61276-bc71-4280-9750-4f0d317d6b77")
 	)
 	(segment
-		(start 82 112)
-		(end 82 120.5)
+		(start 82.5 111.5)
+		(end 82.5 118)
 		(width 0.5)
 		(layer "B.Cu")
 		(net "GND")
@@ -19021,7 +19441,7 @@
 	)
 	(segment
 		(start 89.5 104.5)
-		(end 82 112)
+		(end 82.5 111.5)
 		(width 0.5)
 		(layer "B.Cu")
 		(net "GND")
@@ -19996,7 +20416,7 @@
 		(uuid "7aa70f18-f5ab-403e-aa93-6d58dce0b419")
 	)
 	(segment
-		(start 59.5 111)
+		(start 59.5 106.5)
 		(end 59.5 107.75)
 		(width 1)
 		(layer "B.Cu")
@@ -20018,22 +20438,6 @@
 		(layer "F.Cu")
 		(net "Neut")
 		(uuid "15573b55-1f5d-4224-b91e-53d3cff6fa48")
-	)
-	(segment
-		(start 62.25 116)
-		(end 59.5 116)
-		(width 1)
-		(layer "F.Cu")
-		(net "Neut")
-		(uuid "2b713fe6-4d25-4c5a-aeed-f6bea5be238a")
-	)
-	(segment
-		(start 65.25 113)
-		(end 62.25 116)
-		(width 1)
-		(layer "F.Cu")
-		(net "Neut")
-		(uuid "3a7f8e81-7e9d-4c5b-9338-232d7cbf4610")
 	)
 	(segment
 		(start 84.5 113)
@@ -22074,6 +22478,86 @@
 		(layer "F.Cu")
 		(net "Neut")
 		(uuid "46a5d7db-638a-4d5c-a625-d6bd1ffe9fe6")
+	)
+	(segment
+		(start 55.8 117.5)
+		(end 55.8 110.3)
+		(width 1)
+		(layer "F.Cu")
+		(net "L_SW")
+		(uuid "267d3354-e94b-4902-9dff-36fd41d1fbd8")
+	)
+	(segment
+		(start 55.8 110.3)
+		(end 59.5 106.5)
+		(width 1)
+		(layer "F.Cu")
+		(net "L_SW")
+		(uuid "3d23fcd7-7ce5-48d9-add1-19ec71d3b046")
+	)
+	(segment
+		(start 63.3 118.9)
+		(end 63.3 113)
+		(width 1)
+		(layer "F.Cu")
+		(net "Neut")
+		(uuid "9a4b62d9-1064-4b2b-8754-8675f0e58d54")
+	)
+	(segment
+		(start 83 98.5)
+		(end 83 102)
+		(width 1)
+		(layer "F.Cu")
+		(net "L")
+		(uuid "ef078cd6-059c-479b-b173-dd6a86235524")
+	)
+	(segment
+		(start 83 102)
+		(end 79.3 105.7)
+		(width 1)
+		(layer "F.Cu")
+		(net "L")
+		(uuid "4117777f-51ec-4d98-916e-64ec92eab604")
+	)
+	(segment
+		(start 77.9 113)
+		(end 77.9 113.2)
+		(width 1)
+		(layer "F.Cu")
+		(net "Neut")
+		(uuid "148156b4-c716-48f9-bc3d-3cdfa3c6eae3")
+	)
+	(segment
+		(start 65.25 113)
+		(end 61 113)
+		(width 1)
+		(layer "F.Cu")
+		(net "Neut")
+		(uuid "1781a09a-d226-4f2e-a198-0a9d80035ee8")
+	)
+	(segment
+		(start 61 113)
+		(end 59.5 111.5)
+		(width 1)
+		(layer "F.Cu")
+		(net "Neut")
+		(uuid "5652c55b-05a2-474d-8cb5-ab33a96e5b20")
+	)
+	(segment
+		(start 82.5 118)
+		(end 82 118.5)
+		(width 0.5)
+		(layer "B.Cu")
+		(net "GND")
+		(uuid "14cb5e34-edb3-4823-b222-1df39e9502fd")
+	)
+	(segment
+		(start 82 118.5)
+		(end 82 120.5)
+		(width 0.5)
+		(layer "B.Cu")
+		(net "GND")
+		(uuid "1924f235-d435-4319-837e-aa95ad42ddf9")
 	)
 	(segment
 		(start 148.8645 65.0455)
