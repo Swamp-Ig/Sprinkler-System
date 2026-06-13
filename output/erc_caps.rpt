@@ -1,0 +1,13 @@
+ERC report (2026-06-13T08:47:27, Encoding UTF8)
+Report includes: Errors, Warnings
+
+***** Sheet /
+
+ ** ERC messages: 0  Errors 0  Warnings 0
+
+ ** Ignored checks:
+    - Input Power pin not driven by any Output Power pins
+    - Four connection points are joined together
+    - SPICE model issue
+    - Symbol doesn't match copy in library
+    - Footprint link issue
