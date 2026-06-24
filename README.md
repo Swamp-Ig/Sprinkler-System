@@ -35,7 +35,7 @@ This board must be installed in a suitable enclosure. Since it is likely to be i
 
 Even inside a sealed enclosure, condensation can form on the PCB during temperature cycling. Apply conformal coating after final assembly and testing:
 
-- **Mask before coating**: screw terminals (J2–J3), pluggable terminal connectors (J1, J20–J25; KF2EDG-style), fuse holders, the ESP32 U.FL connector, and the USB-to-UART header (J5) so they remain accessible.
+- **Mask before coating**: the mains/transformer terminals (J1–J3), pluggable zone connectors (J20–J25; KF2EDG-style), fuse holders, the ESP32 U.FL connector, and the USB-to-UART header (J5) so they remain accessible.
 - Apply 2–3 thin coats of acrylic or silicone conformal coating to both sides of the PCB.
 - Allow to fully cure before installing in the enclosure.
 
@@ -70,20 +70,19 @@ When a zone is activated, the ESP32 first enables the 24 VAC rail (K1), then dri
 | K1 | Solid-state relay | Omron G3MB-202P | Gates the 24 VAC solenoid rail (GPIO16) |
 | K20–K25 | Relay ×6 | Omron G5LE-1 | SPDT, 5 V coil, 10 A / 250 VAC contacts |
 | RV20–RV25 | Varistor ×6 | 68 V | Surge protection, one per zone output |
-| RV1 | Varistor | 10D471K (275 VAC) | Across K1 SSR output / transformer primary |
-| RV2 | Varistor | 10D471K (275 VAC) | Across mains L–N, after F1 |
+| RV1 | Varistor | 10D471K (275 VAC) | Across mains L–N input, after F1 |
+| RV2 | Varistor | 10D471K (275 VAC) | Across K1 SSR output / transformer primary |
 | F1 | Fuse | **T1A** (time-delay) | Mains supply protection — slow-blow for transformer/HLK inrush |
 | F2 | Fuse | **T2A** (time-delay) | 24 VAC supply protection — slow-blow for solenoid inrush |
 | D1 | Diode | 1N4148 (0805) | 24 VAC rail sense |
-| D2 | Schottky diode | SS34 (SMA) | UART 5 V back-feed block. **DNP** — bridge the pads if unfitted (back-side silk) |
 | JP1 | Solder jumper | 3-way | J6 I²C-header supply select: **3V3 (default)** / 5V (back side) |
-| C7 | Capacitor | 220 µF / ≥10 V | 5 V rail bulk reservoir (THT radial) |
-| C1, C4 | SMD capacitors | 10 µF | Supply filtering / sense |
+| C5 | Capacitor | 220 µF / ≥10 V | 5 V rail bulk reservoir (THT radial) |
+| C1, C7 | SMD capacitors | 10 µF | Supply filtering (C1 on 5 V, C7 on 3V3) |
 | C2, C3 | SMD capacitors | 22 µF | Supply filtering / sense |
-| C5, C6, C20–C25 | SMD capacitors | 100 nF | EN reset (C5), ESP32 VDD (C6), zone snubbers (C20–C25) |
-| R1, R3, R5–R10 | SMD resistors | 10 kΩ | Sense (R1), EN/BOOT pull-ups (R3/R7), button pull-downs (R5/R6/R9/R10) |
-| R2, R11–R14 | SMD resistors | 4.7 kΩ | Sense (R2), LED series (R11/R12), I²C pull-ups (R13/R14) |
-| R4, R8 | SMD resistors | 470 Ω | EN/BOOT switch series |
+| C4, C6, C20–C25 | SMD capacitors | 100 nF | ESP32 VDD (C4), EN reset (C6), zone snubbers (C20–C25) |
+| R1, R3, R5, R6, R8, R10, R11 | SMD resistors | 10 kΩ | Sense (R1), EN/BOOT pull-ups (R3/R6), button pull-downs (R5/R8/R10/R11) |
+| R2, R9, R12–R14 | SMD resistors | 4.7 kΩ | Sense (R2), LED series (R9/R12), I²C pull-ups (R13/R14) |
+| R4, R7 | SMD resistors | 470 Ω | EN/BOOT switch series |
 | R20–R25 | SMD resistors | 100 Ω | Zone snubber series |
 | LED1, LED2 | LED ×2 | 0805 | IO2 status / power |
 | SW1, SW2 | Tactile switch ×2 | — | EN (reset) / BOOT |
@@ -94,7 +93,7 @@ See `manufacturing/bom/bom.csv` for the full BOM with quantities, values, and fo
 
 ## Wiring
 
-### J1 — Main Supply (3-pin 5.08 mm pluggable terminal connector, MSTBA 2,5/3-G-5,08 / 250 V rated, bottom-left of board)
+### J1 — Main Supply (3-pin 5.0 mm Phoenix PT-series terminal block, PT 1,5/3-5.0, mains-rated, bottom-left of board)
 
 Mains input to the board. Also feeds J2 to supply the external transformer primary.
 
@@ -139,7 +138,7 @@ Each zone terminal has a switched 24 VAC output and a 24 VAC common. Connect sol
 
 ### J4 — Button Inputs (6-pin JST XH)
 
-Four digital inputs, each with a 10 kΩ pull-**down** to GND (R5, R6, R9, R10). Pin 2 supplies 3.3 V, so a momentary button wired from a GPIO pin to pin 2 reads **active-HIGH** (HIGH while pressed). GPIO34 and GPIO35 are input-only pins on the ESP32 (no internal pull-up/down — the external 10 kΩ resistors set their idle level).
+Four digital inputs, each with a 10 kΩ pull-**down** to GND (R5, R8, R10, R11). Pin 2 supplies 3.3 V, so a momentary button wired from a GPIO pin to pin 2 reads **active-HIGH** (HIGH while pressed). GPIO34 and GPIO35 are input-only pins on the ESP32 (no internal pull-up/down — the external 10 kΩ resistors set their idle level).
 
 | Pin | Signal |
 |-----|--------|
@@ -152,11 +151,11 @@ Four digital inputs, each with a 10 kΩ pull-**down** to GND (R5, R6, R9, R10). 
 
 Wire each button between pin 2 (+3.3 V) and the desired button pin.
 
-If four buttons are not enough, R10 can be replaced with a capacitor and the four inputs wired as a resistor ladder to a single ADC pin, giving up to 16+ combinations. See the [ESPHome ADC documentation](https://esphome.io/components/sensor/adc.html) for how to read and threshold an analog resistor ladder.
+If four buttons are not enough, one of the pull-down resistors (R5/R8/R10/R11) can be replaced with a capacitor and the four inputs wired as a resistor ladder to a single ADC pin, giving up to 16+ combinations. See the [ESPHome ADC documentation](https://esphome.io/components/sensor/adc.html) for how to read and threshold an analog resistor ladder.
 
 ### J5 — UART0 (4-pin JST XH)
 
-For programming and serial debug. Connect a 5 V USB-to-UART adapter here. The 5 V pin feeds U1 (AMS1117-3.3) through D2, powering the ESP32 from the adapter supply without needing mains. D2 (SS34 Schottky) blocks the onboard HLK-PM01 5 V from back-feeding the adapter; it is fitted **DNP** — if you do not populate it, bridge its pads (see the back-side silk note) or the J5 5 V pin will be dead.
+For programming and serial debug. Connect a 5 V USB-to-UART adapter here. The 5 V pin connects directly to the +5V rail, so the adapter powers U1 (AMS1117-3.3) and the ESP32 without needing mains. **Power from one source at a time** — do not connect the UART adapter's 5 V while the board is also running from mains, as the adapter would back-feed the HLK-PM01 5 V output.
 
 | Pin | Signal |
 |-----|--------|
@@ -199,9 +198,9 @@ An **SSD1309** (or SSD1306) OLED display is one option; any I²C device works. E
 | 23 | Zone 5 output | → ULN2803A → K25 relay |
 | 25 | 24V sense input | Sens\_24V — EL817 optocoupler output (D1/R1 drive the LED off the 24 VAC rail; R2/C3 filter the transistor output); HIGH when 24 VAC present |
 | 32 | Button 0 | J4, 10 kΩ pull-down (R5) — active-HIGH, button pulls to +3.3 V |
-| 33 | Button 1 | J4, 10 kΩ pull-down (R6) — active-HIGH |
-| 34 | Button 2 | J4, 10 kΩ pull-down (R9) — active-HIGH, input-only pin, no internal pull |
-| 35 | Button 3 | J4, 10 kΩ pull-down (R10) — active-HIGH, input-only pin, no internal pull |
+| 33 | Button 1 | J4, 10 kΩ pull-down (R8) — active-HIGH |
+| 34 | Button 2 | J4, 10 kΩ pull-down (R10) — active-HIGH, input-only pin, no internal pull |
+| 35 | Button 3 | J4, 10 kΩ pull-down (R11) — active-HIGH, input-only pin, no internal pull |
 
 ## ESPHome Configuration
 
@@ -382,7 +381,7 @@ The **24V Fault** template sensor fires when `supply_24v` is `ON` but `sens_24v`
 
 ## Assembly Notes
 
-1. **SMD first** — solder U1 (AMS1117, SOT-223), U2 (EL817), U5 (ULN2803A, SOIC-18), bypass capacitors, and resistors before installing through-hole parts. JP1 and the DNP D2 are on the **back** side.
+1. **SMD first** — solder U1 (AMS1117, SOT-223), U2 (EL817), U5 (ULN2803A, SOIC-18), bypass capacitors, and resistors before installing through-hole parts. JP1 (I²C supply jumper) is on the **back** side.
 2. **HLK-PM01 (U3)** — the module solders via its 4 pins. Ensure solid joints; this carries mains current.
 3. **Relay orientation** — G5LE-1 relays are polarised. Match the notch on pin 1 to the PCB silkscreen indicator.
 4. **ULN2803A (U5)** — SOIC-18 surface-mount package; cannot be socketed. Take care with orientation — pin 1 dot to silkscreen marker.
