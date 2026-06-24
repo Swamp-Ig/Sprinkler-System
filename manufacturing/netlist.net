@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "Z:\\My Documents\\Hardware\\Sprinkler System\\Sprinkler System.kicad_sch")
-		(date "2026-06-13T18:46:51")
+		(date "2026-06-24T21:58:45")
 		(tool "Eeschema 10.0.3")
 		(sheet
 			(number "1")
@@ -218,114 +218,6 @@
 		)
 		(comp
 			(ref "C4")
-			(value "10u")
-			(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
-			(description "Unpolarized capacitor, small symbol")
-			(fields
-				(field
-					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "Unpolarized capacitor, small symbol")
-			)
-			(libsource
-				(lib "Device")
-				(part "C_Small")
-				(description "Unpolarized capacitor, small symbol")
-			)
-			(property
-				(name "Sheetname")
-				(value "")
-			)
-			(property
-				(name "Sheetfile")
-				(value "Sprinkler System.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "capacitor cap")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "C_*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "cd8b9557-61b8-4ba5-8057-7884fc215173")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-					)
-				)
-			)
-		)
-		(comp
-			(ref "C5")
-			(value "100n")
-			(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
-			(description "ESP32 EN reset capacitor")
-			(fields
-				(field
-					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "ESP32 EN reset capacitor")
-			)
-			(libsource
-				(lib "Device")
-				(part "C_Small")
-				(description "Unpolarized capacitor, small symbol")
-			)
-			(property
-				(name "Sheetname")
-				(value "")
-			)
-			(property
-				(name "Sheetfile")
-				(value "Sprinkler System.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "capacitor cap")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "C_*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "a92e7ba7-eb9f-494b-9c77-e2e161810b91")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-					)
-				)
-			)
-		)
-		(comp
-			(ref "C6")
 			(value "100n")
 			(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
 			(description "ESP32 VDD decoupling")
@@ -379,10 +271,10 @@
 			)
 		)
 		(comp
-			(ref "C7")
+			(ref "C5")
 			(value "220u")
 			(footprint "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm")
-			(description "5V rail bulk capacitor (WiFi TX burst reservoir)")
+			(description "Polarized capacitor")
 			(fields
 				(field
 					(name "Footprint") "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm")
@@ -390,7 +282,7 @@
 					(name "Datasheet")
 				)
 				(field
-					(name "Description") "5V rail bulk capacitor (WiFi TX burst reservoir)")
+					(name "Description") "Polarized capacitor")
 			)
 			(libsource
 				(lib "Device")
@@ -418,6 +310,114 @@
 				(tstamps "/")
 			)
 			(tstamps "3fa8dc9c-dd80-41fe-b42d-8fbe032c8295")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C6")
+			(value "100n")
+			(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+			(description "ESP32 EN reset capacitor")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "ESP32 EN reset capacitor")
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Small")
+				(description "Unpolarized capacitor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "Sprinkler System.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "capacitor cap")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "a92e7ba7-eb9f-494b-9c77-e2e161810b91")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "C7")
+			(value "10u")
+			(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+			(description "Unpolarized capacitor, small symbol")
+			(fields
+				(field
+					(name "Footprint") "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Unpolarized capacitor, small symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "C_Small")
+				(description "Unpolarized capacitor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "Sprinkler System.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "capacitor cap")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "C_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "cd8b9557-61b8-4ba5-8057-7884fc215173")
 			(units
 				(unit
 					(name "A")
@@ -823,65 +823,8 @@
 			)
 		)
 		(comp
-			(ref "D2")
-			(value "SS34")
-			(footprint "Diode_SMD:D_SMA")
-			(description "UART 5V back-feed blocking diode. DNP: bridge pads if not fitted.")
-			(fields
-				(field
-					(name "Footprint") "Diode_SMD:D_SMA")
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "UART 5V back-feed blocking diode. DNP: bridge pads if not fitted.")
-			)
-			(libsource
-				(lib "Device")
-				(part "D_Schottky")
-				(description "Schottky diode")
-			)
-			(property
-				(name "Sheetname")
-				(value "")
-			)
-			(property
-				(name "Sheetfile")
-				(value "Sprinkler System.kicad_sch")
-			)
-			(property
-				(name "dnp")
-			)
-			(property
-				(name "ki_keywords")
-				(value "diode Schottky")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "TO-???* *_Diode_* *SingleDiode* D_*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "b7020ded-7227-4c13-9daa-619f89b33f8f")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-					)
-				)
-			)
-		)
-		(comp
 			(ref "F1")
-			(value "1A")
+			(value "T1A")
 			(footprint "Sprinkler System:Fuseholder_5x20mm_15mm_Pins")
 			(description "Fuse")
 			(fields
@@ -935,7 +878,7 @@
 		)
 		(comp
 			(ref "F2")
-			(value "2A")
+			(value "T2A")
 			(footprint "Sprinkler System:Fuseholder_5x20mm_15mm_Pins")
 			(description "Fuse")
 			(fields
@@ -989,22 +932,22 @@
 		)
 		(comp
 			(ref "J1")
-			(value "Main Supply")
-			(footprint "Sprinkler System:PhoenixContact_MSTBA_2,5_3-G-5,08_1x03_P5.08mm_Horizontal_EdgeClip")
-			(description "Generic connector, single row, 01x03, script generated")
+			(value "Main_Supply")
+			(footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-3-5.0-H_1x03_P5.00mm_Horizontal")
+			(description "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)")
 			(fields
 				(field
-					(name "Footprint") "Sprinkler System:PhoenixContact_MSTBA_2,5_3-G-5,08_1x03_P5.08mm_Horizontal_EdgeClip")
+					(name "Footprint") "TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-3-5.0-H_1x03_P5.00mm_Horizontal")
 				(field
 					(name "Datasheet")
 				)
 				(field
-					(name "Description") "Generic connector, single row, 01x03, script generated")
+					(name "Description") "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)")
 			)
 			(libsource
 				(lib "Connector")
-				(part "Conn_01x03_Socket")
-				(description "Generic connector, single row, 01x03, script generated")
+				(part "Screw_Terminal_01x03")
+				(description "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)")
 			)
 			(property
 				(name "Sheetname")
@@ -1016,11 +959,11 @@
 			)
 			(property
 				(name "ki_keywords")
-				(value "connector")
+				(value "screw terminal")
 			)
 			(property
 				(name "ki_fp_filters")
-				(value "Connector*:*_1x??_*")
+				(value "TerminalBlock*:*")
 			)
 			(sheetpath
 				(names "/")
@@ -1101,21 +1044,21 @@
 		(comp
 			(ref "J3")
 			(value "XFMR_In")
-			(footprint "TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-2-5.0-H_1x02_P5.00mm_Horizontal")
-			(description "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			(footprint "Connector_Phoenix_MC:PhoenixContact_MC_1,5_2-G-3.81_1x02_P3.81mm_Horizontal")
+			(description "Generic connector, single row, 01x02, script generated")
 			(fields
 				(field
-					(name "Footprint") "TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-2-5.0-H_1x02_P5.00mm_Horizontal")
+					(name "Footprint") "Connector_Phoenix_MC:PhoenixContact_MC_1,5_2-G-3.81_1x02_P3.81mm_Horizontal")
 				(field
 					(name "Datasheet")
 				)
 				(field
-					(name "Description") "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+					(name "Description") "Generic connector, single row, 01x02, script generated")
 			)
 			(libsource
 				(lib "Connector")
-				(part "Screw_Terminal_01x02")
-				(description "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
+				(part "Conn_01x02_Socket")
+				(description "Generic connector, single row, 01x02, script generated")
 			)
 			(property
 				(name "Sheetname")
@@ -1127,17 +1070,17 @@
 			)
 			(property
 				(name "ki_keywords")
-				(value "screw terminal")
+				(value "connector")
 			)
 			(property
 				(name "ki_fp_filters")
-				(value "TerminalBlock*:*")
+				(value "Connector*:*_1x??_*")
 			)
 			(sheetpath
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "bbaee959-0e16-4128-85ba-01686c8aec72")
+			(tstamps "c0fc990c-faf9-40b1-89b7-10e7d7185863")
 			(units
 				(unit
 					(name "A")
@@ -2609,60 +2552,6 @@
 			(ref "R6")
 			(value "10k")
 			(footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
-			(description "Resistor, small symbol")
-			(fields
-				(field
-					(name "Footprint") "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "Resistor, small symbol")
-			)
-			(libsource
-				(lib "")
-				(part "R_Small_1")
-				(description "Resistor, small symbol")
-			)
-			(property
-				(name "Sheetname")
-				(value "")
-			)
-			(property
-				(name "Sheetfile")
-				(value "Sprinkler System.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "R resistor")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "R_*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "7ef6e7ff-a97f-472c-b437-e53e363fdc81")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-					)
-				)
-			)
-		)
-		(comp
-			(ref "R7")
-			(value "10k")
-			(footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
 			(description "Resistor")
 			(fields
 				(field
@@ -2714,7 +2603,7 @@
 			)
 		)
 		(comp
-			(ref "R8")
+			(ref "R7")
 			(value "470")
 			(footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
 			(description "Resistor")
@@ -2768,7 +2657,7 @@
 			)
 		)
 		(comp
-			(ref "R9")
+			(ref "R8")
 			(value "10k")
 			(footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
 			(description "Resistor, small symbol")
@@ -2806,7 +2695,61 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "8e3b8c80-b8a8-4864-a8d1-aa8d9e5635b4")
+			(tstamps "7ef6e7ff-a97f-472c-b437-e53e363fdc81")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R9")
+			(value "4k7")
+			(footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+			(description "Resistor, small symbol")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor, small symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small")
+				(description "Resistor, small symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "Sprinkler System.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "R resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "32ec3f8e-0a00-4489-8761-e190394d7da7")
 			(units
 				(unit
 					(name "A")
@@ -2860,7 +2803,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "455cd75c-9069-4ba4-9ea4-e5936bd1aa30")
+			(tstamps "8e3b8c80-b8a8-4864-a8d1-aa8d9e5635b4")
 			(units
 				(unit
 					(name "A")
@@ -2877,7 +2820,7 @@
 		)
 		(comp
 			(ref "R11")
-			(value "4k7")
+			(value "10k")
 			(footprint "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder")
 			(description "Resistor, small symbol")
 			(fields
@@ -2890,8 +2833,8 @@
 					(name "Description") "Resistor, small symbol")
 			)
 			(libsource
-				(lib "Device")
-				(part "R_Small")
+				(lib "")
+				(part "R_Small_1")
 				(description "Resistor, small symbol")
 			)
 			(property
@@ -2914,7 +2857,7 @@
 				(names "/")
 				(tstamps "/")
 			)
-			(tstamps "32ec3f8e-0a00-4489-8761-e190394d7da7")
+			(tstamps "455cd75c-9069-4ba4-9ea4-e5936bd1aa30")
 			(units
 				(unit
 					(name "A")
@@ -3418,65 +3361,11 @@
 		(comp
 			(ref "RV1")
 			(value "10D471K")
-			(footprint "Sprinkler System:RV_Disc_D12mm_W3.9mm_P7.5mm_EdgeClip")
+			(footprint "Varistor:RV_Disc_D12mm_W4mm_P7.5mm")
 			(description "Voltage dependent resistor, 470V varistor voltage, 10mm disc")
 			(fields
 				(field
-					(name "Footprint") "Sprinkler System:RV_Disc_D12mm_W3.9mm_P7.5mm_EdgeClip")
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "Voltage dependent resistor, 470V varistor voltage, 10mm disc")
-			)
-			(libsource
-				(lib "Device")
-				(part "Varistor")
-				(description "Voltage dependent resistor")
-			)
-			(property
-				(name "Sheetname")
-				(value "")
-			)
-			(property
-				(name "Sheetfile")
-				(value "Sprinkler System.kicad_sch")
-			)
-			(property
-				(name "ki_keywords")
-				(value "VDR resistance")
-			)
-			(property
-				(name "ki_fp_filters")
-				(value "RV_* Varistor*")
-			)
-			(sheetpath
-				(names "/")
-				(tstamps "/")
-			)
-			(tstamps "c41816fb-7709-4ea6-b1d0-0cbec2b000a1")
-			(units
-				(unit
-					(name "A")
-					(pins
-						(pin
-							(num "1")
-						)
-						(pin
-							(num "2")
-						)
-					)
-				)
-			)
-		)
-		(comp
-			(ref "RV2")
-			(value "10D471K")
-			(footprint "Varistor:RV_Disc_D12mm_W3.9mm_P7.5mm")
-			(description "Voltage dependent resistor, 470V varistor voltage, 10mm disc")
-			(fields
-				(field
-					(name "Footprint") "Varistor:RV_Disc_D12mm_W3.9mm_P7.5mm")
+					(name "Footprint") "Varistor:RV_Disc_D12mm_W4mm_P7.5mm")
 				(field
 					(name "Datasheet")
 				)
@@ -3509,6 +3398,60 @@
 				(tstamps "/")
 			)
 			(tstamps "15af6905-0d27-40e5-ab42-b21674fb68ed")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "RV2")
+			(value "10D471K")
+			(footprint "Varistor:RV_Disc_D12mm_W4mm_P7.5mm")
+			(description "Voltage dependent resistor, 470V varistor voltage, 10mm disc")
+			(fields
+				(field
+					(name "Footprint") "Varistor:RV_Disc_D12mm_W4mm_P7.5mm")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Voltage dependent resistor, 470V varistor voltage, 10mm disc")
+			)
+			(libsource
+				(lib "Device")
+				(part "Varistor")
+				(description "Voltage dependent resistor")
+			)
+			(property
+				(name "Sheetname")
+				(value "")
+			)
+			(property
+				(name "Sheetfile")
+				(value "Sprinkler System.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "VDR resistance")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "RV_* Varistor*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "c41816fb-7709-4ea6-b1d0-0cbec2b000a1")
 			(units
 				(unit
 					(name "A")
@@ -4832,45 +4775,6 @@
 		)
 		(libpart
 			(lib "Connector")
-			(part "Conn_01x03_Socket")
-			(description "Generic connector, single row, 01x03, script generated")
-			(footprints
-				(fp "Connector*:*_1x??_*")
-			)
-			(fields
-				(field
-					(name "Reference") "J")
-				(field
-					(name "Value") "Conn_01x03_Socket")
-				(field
-					(name "Footprint")
-				)
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "Generic connector, single row, 01x03, script generated")
-			)
-			(pins
-				(pin
-					(num "1")
-					(name "Pin_1")
-					(type "passive")
-				)
-				(pin
-					(num "2")
-					(name "Pin_2")
-					(type "passive")
-				)
-				(pin
-					(num "3")
-					(name "Pin_3")
-					(type "passive")
-				)
-			)
-		)
-		(libpart
-			(lib "Connector")
 			(part "Screw_Terminal_01x02")
 			(description "Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)")
 			(footprints
@@ -4899,6 +4803,45 @@
 				(pin
 					(num "2")
 					(name "Pin_2")
+					(type "passive")
+				)
+			)
+		)
+		(libpart
+			(lib "Connector")
+			(part "Screw_Terminal_01x03")
+			(description "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			(footprints
+				(fp "TerminalBlock*:*")
+			)
+			(fields
+				(field
+					(name "Reference") "J")
+				(field
+					(name "Value") "Screw_Terminal_01x03")
+				(field
+					(name "Footprint")
+				)
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)")
+			)
+			(pins
+				(pin
+					(num "1")
+					(name "Pin_1")
+					(type "passive")
+				)
+				(pin
+					(num "2")
+					(name "Pin_2")
+					(type "passive")
+				)
+				(pin
+					(num "3")
+					(name "Pin_3")
 					(type "passive")
 				)
 			)
@@ -5172,43 +5115,6 @@
 				(pin
 					(num "2")
 					(name "")
-					(type "passive")
-				)
-			)
-		)
-		(libpart
-			(lib "Device")
-			(part "D_Schottky")
-			(description "Schottky diode")
-			(footprints
-				(fp "TO-???*")
-				(fp "*_Diode_*")
-				(fp "*SingleDiode*")
-				(fp "D_*")
-			)
-			(fields
-				(field
-					(name "Reference") "D")
-				(field
-					(name "Value") "D_Schottky")
-				(field
-					(name "Footprint")
-				)
-				(field
-					(name "Datasheet")
-				)
-				(field
-					(name "Description") "Schottky diode")
-			)
-			(pins
-				(pin
-					(num "1")
-					(name "K")
-					(type "passive")
-				)
-				(pin
-					(num "2")
-					(name "A")
 					(type "passive")
 				)
 			)
@@ -6098,11 +6004,11 @@
 			)
 			(node
 				(ref "C4")
-				(pin "1")
+				(pin "2")
 				(pintype "passive")
 			)
 			(node
-				(ref "C6")
+				(ref "C7")
 				(pin "1")
 				(pintype "passive")
 			)
@@ -6140,7 +6046,7 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "R7")
+				(ref "R6")
 				(pin "1")
 				(pintype "passive")
 			)
@@ -6178,14 +6084,20 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "C7")
+				(ref "C5")
 				(pin "1")
 				(pintype "passive")
 			)
 			(node
-				(ref "D2")
-				(pin "1")
-				(pinfunction "K_1")
+				(ref "J5")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "JP1")
+				(pin "3")
+				(pinfunction "B_3")
 				(pintype "passive")
 			)
 			(node
@@ -6250,29 +6162,6 @@
 		)
 		(net
 			(code "3")
-			(name "/+5V_UART")
-			(class "Default")
-			(node
-				(ref "D2")
-				(pin "2")
-				(pinfunction "A_2")
-				(pintype "passive")
-			)
-			(node
-				(ref "J5")
-				(pin "2")
-				(pinfunction "Pin_2_2")
-				(pintype "passive")
-			)
-			(node
-				(ref "JP1")
-				(pin "3")
-				(pinfunction "B_3")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "4")
 			(name "/24V_On")
 			(class "Default")
 			(node
@@ -6289,7 +6178,7 @@
 			)
 		)
 		(net
-			(code "5")
+			(code "4")
 			(name "/Coil0")
 			(class "Supply,Default")
 			(node
@@ -6305,7 +6194,7 @@
 			)
 		)
 		(net
-			(code "6")
+			(code "5")
 			(name "/Coil1")
 			(class "Supply,Default")
 			(node
@@ -6321,7 +6210,7 @@
 			)
 		)
 		(net
-			(code "7")
+			(code "6")
 			(name "/Coil2")
 			(class "Supply,Default")
 			(node
@@ -6337,7 +6226,7 @@
 			)
 		)
 		(net
-			(code "8")
+			(code "7")
 			(name "/Coil3")
 			(class "Supply,Default")
 			(node
@@ -6353,7 +6242,7 @@
 			)
 		)
 		(net
-			(code "9")
+			(code "8")
 			(name "/Coil4")
 			(class "Supply,Default")
 			(node
@@ -6369,7 +6258,7 @@
 			)
 		)
 		(net
-			(code "10")
+			(code "9")
 			(name "/Coil5")
 			(class "Supply,Default")
 			(node
@@ -6385,12 +6274,12 @@
 			)
 		)
 		(net
-			(code "11")
+			(code "10")
 			(name "/EN")
 			(class "Default")
 			(node
-				(ref "C5")
-				(pin "1")
+				(ref "C6")
+				(pin "2")
 				(pintype "passive")
 			)
 			(node
@@ -6412,11 +6301,11 @@
 			)
 		)
 		(net
-			(code "12")
+			(code "11")
 			(name "/IO0")
 			(class "Default")
 			(node
-				(ref "R7")
+				(ref "R6")
 				(pin "2")
 				(pintype "passive")
 			)
@@ -6434,7 +6323,7 @@
 			)
 		)
 		(net
-			(code "13")
+			(code "12")
 			(name "/IO1")
 			(class "Default")
 			(node
@@ -6451,7 +6340,7 @@
 			)
 		)
 		(net
-			(code "14")
+			(code "13")
 			(name "/IO2")
 			(class "Default")
 			(node
@@ -6468,7 +6357,7 @@
 			)
 		)
 		(net
-			(code "15")
+			(code "14")
 			(name "/IO3")
 			(class "Default")
 			(node
@@ -6485,7 +6374,7 @@
 			)
 		)
 		(net
-			(code "16")
+			(code "15")
 			(name "/IO32")
 			(class "Default")
 			(node
@@ -6507,7 +6396,7 @@
 			)
 		)
 		(net
-			(code "17")
+			(code "16")
 			(name "/IO33")
 			(class "Default")
 			(node
@@ -6517,7 +6406,7 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "R6")
+				(ref "R8")
 				(pin "1")
 				(pintype "passive")
 			)
@@ -6529,7 +6418,7 @@
 			)
 		)
 		(net
-			(code "18")
+			(code "17")
 			(name "/IO34")
 			(class "Default")
 			(node
@@ -6539,7 +6428,7 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "R9")
+				(ref "R10")
 				(pin "1")
 				(pintype "passive")
 			)
@@ -6551,7 +6440,7 @@
 			)
 		)
 		(net
-			(code "19")
+			(code "18")
 			(name "/IO35")
 			(class "Default")
 			(node
@@ -6561,7 +6450,7 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "R10")
+				(ref "R11")
 				(pin "1")
 				(pintype "passive")
 			)
@@ -6573,24 +6462,7 @@
 			)
 		)
 		(net
-			(code "20")
-			(name "/J6_VCC")
-			(class "Default")
-			(node
-				(ref "J6")
-				(pin "2")
-				(pinfunction "Pin_2_2")
-				(pintype "passive")
-			)
-			(node
-				(ref "JP1")
-				(pin "2")
-				(pinfunction "C_2")
-				(pintype "passive")
-			)
-		)
-		(net
-			(code "21")
+			(code "19")
 			(name "/SCL")
 			(class "Default")
 			(node
@@ -6612,7 +6484,7 @@
 			)
 		)
 		(net
-			(code "22")
+			(code "20")
 			(name "/SDA")
 			(class "Default")
 			(node
@@ -6634,7 +6506,7 @@
 			)
 		)
 		(net
-			(code "23")
+			(code "21")
 			(name "/SSR")
 			(class "Supply,Default")
 			(node
@@ -6650,7 +6522,7 @@
 			)
 		)
 		(net
-			(code "24")
+			(code "22")
 			(name "/Sens_24V")
 			(class "Default")
 			(node
@@ -6676,7 +6548,24 @@
 			)
 		)
 		(net
-			(code "25")
+			(code "23")
+			(name "/VCC_I2C")
+			(class "Supply,Default")
+			(node
+				(ref "J6")
+				(pin "2")
+				(pinfunction "Pin_2_2")
+				(pintype "passive")
+			)
+			(node
+				(ref "JP1")
+				(pin "2")
+				(pinfunction "C_2")
+				(pintype "passive")
+			)
+		)
+		(net
+			(code "24")
 			(name "/Zone0")
 			(class "Default")
 			(node
@@ -6693,7 +6582,7 @@
 			)
 		)
 		(net
-			(code "26")
+			(code "25")
 			(name "/Zone1")
 			(class "Default")
 			(node
@@ -6710,7 +6599,7 @@
 			)
 		)
 		(net
-			(code "27")
+			(code "26")
 			(name "/Zone2")
 			(class "Default")
 			(node
@@ -6727,7 +6616,7 @@
 			)
 		)
 		(net
-			(code "28")
+			(code "27")
 			(name "/Zone3")
 			(class "Default")
 			(node
@@ -6744,7 +6633,7 @@
 			)
 		)
 		(net
-			(code "29")
+			(code "28")
 			(name "/Zone4")
 			(class "Default")
 			(node
@@ -6761,7 +6650,7 @@
 			)
 		)
 		(net
-			(code "30")
+			(code "29")
 			(name "/Zone5")
 			(class "Default")
 			(node
@@ -6778,7 +6667,7 @@
 			)
 		)
 		(net
-			(code "31")
+			(code "30")
 			(name "24VAC")
 			(class "24VAC,Default")
 			(node
@@ -6884,7 +6773,7 @@
 			)
 		)
 		(net
-			(code "32")
+			(code "31")
 			(name "24V_Comm")
 			(class "24VAC,Default")
 			(node
@@ -6936,7 +6825,7 @@
 			)
 		)
 		(net
-			(code "33")
+			(code "32")
 			(name "24V_S0")
 			(class "24VAC,Default")
 			(node
@@ -6962,7 +6851,7 @@
 			)
 		)
 		(net
-			(code "34")
+			(code "33")
 			(name "24V_S1")
 			(class "24VAC,Default")
 			(node
@@ -6988,7 +6877,7 @@
 			)
 		)
 		(net
-			(code "35")
+			(code "34")
 			(name "24V_S2")
 			(class "24VAC,Default")
 			(node
@@ -7014,7 +6903,7 @@
 			)
 		)
 		(net
-			(code "36")
+			(code "35")
 			(name "24V_S3")
 			(class "24VAC,Default")
 			(node
@@ -7040,7 +6929,7 @@
 			)
 		)
 		(net
-			(code "37")
+			(code "36")
 			(name "24V_S4")
 			(class "24VAC,Default")
 			(node
@@ -7066,7 +6955,7 @@
 			)
 		)
 		(net
-			(code "38")
+			(code "37")
 			(name "24V_S5")
 			(class "24VAC,Default")
 			(node
@@ -7092,7 +6981,7 @@
 			)
 		)
 		(net
-			(code "39")
+			(code "38")
 			(name "24V_Supply")
 			(class "24VAC,Default")
 			(node
@@ -7108,7 +6997,7 @@
 			)
 		)
 		(net
-			(code "40")
+			(code "39")
 			(name "GND")
 			(class "Default")
 			(node
@@ -7128,7 +7017,7 @@
 			)
 			(node
 				(ref "C4")
-				(pin "2")
+				(pin "1")
 				(pintype "passive")
 			)
 			(node
@@ -7138,7 +7027,7 @@
 			)
 			(node
 				(ref "C6")
-				(pin "2")
+				(pin "1")
 				(pintype "passive")
 			)
 			(node
@@ -7201,7 +7090,7 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "R6")
+				(ref "R7")
 				(pin "2")
 				(pintype "passive")
 			)
@@ -7265,7 +7154,7 @@
 			)
 		)
 		(net
-			(code "41")
+			(code "40")
 			(name "L")
 			(class "Mains,Default")
 			(node
@@ -7279,7 +7168,7 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "RV2")
+				(ref "RV1")
 				(pin "1")
 				(pintype "passive")
 			)
@@ -7291,7 +7180,7 @@
 			)
 		)
 		(net
-			(code "42")
+			(code "41")
 			(name "L_SW")
 			(class "Mains,Default")
 			(node
@@ -7306,13 +7195,13 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "RV1")
+				(ref "RV2")
 				(pin "1")
 				(pintype "passive")
 			)
 		)
 		(net
-			(code "43")
+			(code "42")
 			(name "L_Supply")
 			(class "Mains,Default")
 			(node
@@ -7328,7 +7217,7 @@
 			)
 		)
 		(net
-			(code "44")
+			(code "43")
 			(name "Net-(C20-Pad2)")
 			(class "Default")
 			(node
@@ -7343,7 +7232,7 @@
 			)
 		)
 		(net
-			(code "45")
+			(code "44")
 			(name "Net-(C21-Pad2)")
 			(class "Default")
 			(node
@@ -7358,7 +7247,7 @@
 			)
 		)
 		(net
-			(code "46")
+			(code "45")
 			(name "Net-(C22-Pad2)")
 			(class "Default")
 			(node
@@ -7373,7 +7262,7 @@
 			)
 		)
 		(net
-			(code "47")
+			(code "46")
 			(name "Net-(C23-Pad2)")
 			(class "Default")
 			(node
@@ -7388,7 +7277,7 @@
 			)
 		)
 		(net
-			(code "48")
+			(code "47")
 			(name "Net-(C24-Pad2)")
 			(class "Default")
 			(node
@@ -7403,7 +7292,7 @@
 			)
 		)
 		(net
-			(code "49")
+			(code "48")
 			(name "Net-(C25-Pad2)")
 			(class "Default")
 			(node
@@ -7418,7 +7307,7 @@
 			)
 		)
 		(net
-			(code "50")
+			(code "49")
 			(name "Net-(D1-K)")
 			(class "Default")
 			(node
@@ -7434,7 +7323,7 @@
 			)
 		)
 		(net
-			(code "51")
+			(code "50")
 			(name "Net-(LED1-K)")
 			(class "Default")
 			(node
@@ -7444,13 +7333,13 @@
 				(pintype "passive")
 			)
 			(node
-				(ref "R11")
+				(ref "R9")
 				(pin "1")
 				(pintype "passive")
 			)
 		)
 		(net
-			(code "52")
+			(code "51")
 			(name "Net-(LED2-K)")
 			(class "Default")
 			(node
@@ -7466,7 +7355,7 @@
 			)
 		)
 		(net
-			(code "53")
+			(code "52")
 			(name "Net-(R1-Pad1)")
 			(class "Default")
 			(node
@@ -7481,7 +7370,7 @@
 			)
 		)
 		(net
-			(code "54")
+			(code "53")
 			(name "Net-(R4-Pad1)")
 			(class "Default")
 			(node
@@ -7497,11 +7386,11 @@
 			)
 		)
 		(net
-			(code "55")
-			(name "Net-(R8-Pad1)")
+			(code "54")
+			(name "Net-(R7-Pad1)")
 			(class "Default")
 			(node
-				(ref "R8")
+				(ref "R7")
 				(pin "1")
 				(pintype "passive")
 			)
@@ -7513,7 +7402,7 @@
 			)
 		)
 		(net
-			(code "56")
+			(code "55")
 			(name "Neut")
 			(class "Mains,Default")
 			(node
@@ -7546,7 +7435,7 @@
 			)
 		)
 		(net
-			(code "57")
+			(code "56")
 			(name "unconnected-(K20-Pad4)")
 			(class "Default")
 			(node
@@ -7556,7 +7445,7 @@
 			)
 		)
 		(net
-			(code "58")
+			(code "57")
 			(name "unconnected-(K21-Pad4)")
 			(class "Default")
 			(node
@@ -7566,7 +7455,7 @@
 			)
 		)
 		(net
-			(code "59")
+			(code "58")
 			(name "unconnected-(K22-Pad4)")
 			(class "Default")
 			(node
@@ -7576,7 +7465,7 @@
 			)
 		)
 		(net
-			(code "60")
+			(code "59")
 			(name "unconnected-(K23-Pad4)")
 			(class "Default")
 			(node
@@ -7586,7 +7475,7 @@
 			)
 		)
 		(net
-			(code "61")
+			(code "60")
 			(name "unconnected-(K24-Pad4)")
 			(class "Default")
 			(node
@@ -7596,7 +7485,7 @@
 			)
 		)
 		(net
-			(code "62")
+			(code "61")
 			(name "unconnected-(K25-Pad4)")
 			(class "Default")
 			(node
@@ -7606,7 +7495,7 @@
 			)
 		)
 		(net
-			(code "63")
+			(code "62")
 			(name "unconnected-(U4-IO12-Pad14)")
 			(class "Default")
 			(node
@@ -7617,7 +7506,7 @@
 			)
 		)
 		(net
-			(code "64")
+			(code "63")
 			(name "unconnected-(U4-IO13-Pad16)")
 			(class "Default")
 			(node
@@ -7628,7 +7517,7 @@
 			)
 		)
 		(net
-			(code "65")
+			(code "64")
 			(name "unconnected-(U4-IO14-Pad13)")
 			(class "Default")
 			(node
@@ -7639,7 +7528,7 @@
 			)
 		)
 		(net
-			(code "66")
+			(code "65")
 			(name "unconnected-(U4-IO15-Pad23)")
 			(class "Default")
 			(node
@@ -7650,7 +7539,7 @@
 			)
 		)
 		(net
-			(code "67")
+			(code "66")
 			(name "unconnected-(U4-IO26-Pad11)")
 			(class "Default")
 			(node
@@ -7661,7 +7550,7 @@
 			)
 		)
 		(net
-			(code "68")
+			(code "67")
 			(name "unconnected-(U4-IO27-Pad12)")
 			(class "Default")
 			(node
@@ -7672,7 +7561,7 @@
 			)
 		)
 		(net
-			(code "69")
+			(code "68")
 			(name "unconnected-(U4-NC-Pad32)")
 			(class "Default")
 			(node
@@ -7683,7 +7572,7 @@
 			)
 		)
 		(net
-			(code "70")
+			(code "69")
 			(name "unconnected-(U4-SCK{slash}CLK-Pad20)")
 			(class "Default")
 			(node
@@ -7694,7 +7583,7 @@
 			)
 		)
 		(net
-			(code "71")
+			(code "70")
 			(name "unconnected-(U4-SCS{slash}CMD-Pad19)")
 			(class "Default")
 			(node
@@ -7705,7 +7594,7 @@
 			)
 		)
 		(net
-			(code "72")
+			(code "71")
 			(name "unconnected-(U4-SDI{slash}SD1-Pad22)")
 			(class "Default")
 			(node
@@ -7716,7 +7605,7 @@
 			)
 		)
 		(net
-			(code "73")
+			(code "72")
 			(name "unconnected-(U4-SDO{slash}SD0-Pad21)")
 			(class "Default")
 			(node
@@ -7727,7 +7616,7 @@
 			)
 		)
 		(net
-			(code "74")
+			(code "73")
 			(name "unconnected-(U4-SENSOR_VN-Pad5)")
 			(class "Default")
 			(node
@@ -7738,7 +7627,7 @@
 			)
 		)
 		(net
-			(code "75")
+			(code "74")
 			(name "unconnected-(U4-SENSOR_VP-Pad4)")
 			(class "Default")
 			(node
@@ -7749,7 +7638,7 @@
 			)
 		)
 		(net
-			(code "76")
+			(code "75")
 			(name "unconnected-(U4-SHD{slash}SD2-Pad17)")
 			(class "Default")
 			(node
@@ -7760,7 +7649,7 @@
 			)
 		)
 		(net
-			(code "77")
+			(code "76")
 			(name "unconnected-(U4-SWP{slash}SD3-Pad18)")
 			(class "Default")
 			(node
@@ -7771,7 +7660,7 @@
 			)
 		)
 		(net
-			(code "78")
+			(code "77")
 			(name "unconnected-(U5-I1-Pad1)")
 			(class "Default")
 			(node
@@ -7782,7 +7671,7 @@
 			)
 		)
 		(net
-			(code "79")
+			(code "78")
 			(name "unconnected-(U5-O1-Pad18)")
 			(class "Default")
 			(node

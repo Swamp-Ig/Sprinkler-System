@@ -246,6 +246,22 @@
           ""
         ],
         [
+          "silk_edge_clearance|53000000|54540000|359b55d9-f00a-4ae7-8128-b6348cecafaa|da228bec-daf7-4042-aa79-7096a379cc20",
+          ""
+        ],
+        [
+          "silk_edge_clearance|53000000|63770000|359b55d9-f00a-4ae7-8128-b6348cecafaa|cf322923-173b-433f-8c8a-8ef8530e37b3",
+          ""
+        ],
+        [
+          "silk_edge_clearance|53500000|54540000|71113c84-deed-40c8-9ee8-d6de99528442|da228bec-daf7-4042-aa79-7096a379cc20",
+          ""
+        ],
+        [
+          "silk_edge_clearance|53500000|63770000|71113c84-deed-40c8-9ee8-d6de99528442|cf322923-173b-433f-8c8a-8ef8530e37b3",
+          ""
+        ],
+        [
           "silk_overlap|54140000|86500000|35235f13-d5d1-45e3-9b01-86eb09da33a3|ac8c12f2-8d99-4d9d-aad0-b8544c983793",
           ""
         ],
@@ -267,10 +283,6 @@
         ],
         [
           "silk_overlap|95000000|65930000|cbf4362d-57a7-4d63-97bc-fa52ef90abd0|f5f7e026-95ea-4e01-a456-2ba484a7e150",
-          ""
-        ],
-        [
-          "silk_overlap|95000000|66224819|e8710419-927c-4e66-bf79-7dcb9b52751d|f5f7e026-95ea-4e01-a456-2ba484a7e150",
           ""
         ]
       ],
@@ -787,6 +799,10 @@
       {
         "netclass": "Supply",
         "pattern": "/SSR"
+      },
+      {
+        "netclass": "Supply",
+        "pattern": "/VCC_*"
       }
     ]
   },
@@ -801,7 +817,7 @@
     "page_layout_descr_file": ""
   },
   "schematic": {
-    "annotate_start_num": 19,
+    "annotate_start_num": 0,
     "annotation": {
       "method": 0,
       "sort_order": 1
