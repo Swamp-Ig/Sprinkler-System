@@ -21,6 +21,11 @@ Thumbs.db
 *~
 .history/
 
+# ─── Manufacturing zip archives ───────────────────────────────────────────────
+# Vendor upload packages (JLCPCB, PCBWay, etc.) — generated from tracked
+# Gerbers on demand, no need to version these.
+manufacturing/*.zip
+
 # ─── Manufacturing outputs (OPTIONAL) ─────────────────────────────────────────
 # By default, Gerbers / PDFs / BOMs are tracked in Git so reviewers can view
 # fabrication files without running KiCad. Uncomment below to ignore them.
