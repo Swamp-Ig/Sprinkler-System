@@ -2487,7 +2487,7 @@
 		(descr "Littelfuse clips, https://www.littelfuse.com/~/media/electronics/datasheets/fuse_clips/littelfuse_fuse_clip_100_445_030_520_datasheet.pdf.pdf")
 		(tags "Fuseholder clips")
 		(property "Reference" "F1"
-			(at 1 -6 270)
+			(at 7.5 -3.5 90)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "62617130-d939-4227-9924-1112b93925a1")
@@ -2499,9 +2499,9 @@
 			)
 		)
 		(property "Value" "T1A"
-			(at -2 -6 270)
+			(at 7.5 3.5 90)
 			(unlocked yes)
-			(layer "F.SilkS")
+			(layer "F.Fab")
 			(uuid "d35b5827-291b-455e-90f9-a0f4ea478f90")
 			(effects
 				(font
@@ -2522,7 +2522,7 @@
 				)
 			)
 		)
-		(property "Description" "Fuse"
+		(property "Description" ""
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -2538,12 +2538,6 @@
 		(path "/a88aa3a5-8837-406b-b399-eeddecb45777")
 		(sheetname "/")
 		(sheetfile "Sprinkler System.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -2612,15 +2606,15 @@
 			(uuid "3c0f7ce4-7dd4-47f0-886e-dc5015814e07")
 		)
 		(embedded_fonts no)
-		(model "${KICAD8_3DMODEL_DIR}/Fuse.3dshapes/Fuseholder_Littelfuse_100_series_5x20mm.wrl"
+		(model "${KIPRJMOD}/Sprinkler System.pretty/Fuseholder_5x20mm_15mm_Pins.step"
 			(offset
-				(xyz 0 0 0)
+				(xyz 8 0 0)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz -0 -0 -0)
 			)
 		)
 	)
@@ -8887,7 +8881,7 @@
 		(descr "Littelfuse clips, https://www.littelfuse.com/~/media/electronics/datasheets/fuse_clips/littelfuse_fuse_clip_100_445_030_520_datasheet.pdf.pdf")
 		(tags "Fuseholder clips")
 		(property "Reference" "F2"
-			(at 20.1 -6 270)
+			(at 7.5 -3.5 90)
 			(unlocked yes)
 			(layer "F.SilkS")
 			(uuid "9935f27f-076e-4f97-ae88-f407dc7eaf78")
@@ -8899,9 +8893,9 @@
 			)
 		)
 		(property "Value" "T2A"
-			(at 17.1 -6 270)
+			(at 7.5 3.5 90)
 			(unlocked yes)
-			(layer "F.SilkS")
+			(layer "F.Fab")
 			(uuid "d415dbf7-4125-4b13-ab21-c1cd30282ac7")
 			(effects
 				(font
@@ -8922,7 +8916,7 @@
 				)
 			)
 		)
-		(property "Description" "Fuse"
+		(property "Description" ""
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8938,12 +8932,6 @@
 		(path "/94f3f76a-2f4c-41d9-bf91-952981faf48f")
 		(sheetname "/")
 		(sheetfile "Sprinkler System.kicad_sch")
-		(units
-			(unit
-				(name "A")
-				(pins "1" "2")
-			)
-		)
 		(attr through_hole)
 		(duplicate_pad_numbers_are_jumpers no)
 		(fp_rect
@@ -9012,15 +9000,15 @@
 			(uuid "59c7f87a-e8ef-4cee-a4c0-27cdcd1428af")
 		)
 		(embedded_fonts no)
-		(model "${KICAD8_3DMODEL_DIR}/Fuse.3dshapes/Fuseholder_Littelfuse_100_series_5x20mm.wrl"
+		(model "${KIPRJMOD}/Sprinkler System.pretty/Fuseholder_5x20mm_15mm_Pins.step"
 			(offset
-				(xyz 0 0 0)
+				(xyz 7.5 0 0)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz -0 -0 -0)
 			)
 		)
 	)
@@ -17522,6 +17510,17 @@
 			(uuid "c2ec6076-e80c-4c1f-a402-d8d56bc6d831")
 		)
 		(embedded_fonts no)
+		(model "${KICAD10_3DMODEL_DIR}/Capacitor_THT.3dshapes/C_Radial_D6.3mm_H11.0mm_P2.50mm.step"
+			(offset
+				(xyz 0 0 0)
+			)
+			(scale
+				(xyz 1 1 1)
+			)
+			(rotate
+				(xyz 0 0 0)
+			)
+		)
 	)
 	(footprint "Varistor:RV_Disc_D12mm_W4mm_P7.5mm"
 		(layer "F.Cu")
