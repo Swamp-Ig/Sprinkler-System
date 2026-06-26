@@ -222,7 +222,7 @@ GPIO25 reads the `Sens_24V` net, driven by an **EL817 optocoupler (U2)** that is
 
 Zone 0 (J20 / GPIO17 / K20) can be repurposed as a pump relay, giving 5 irrigation zones (Zones 1–5) plus a pump. This is useful when a booster pump or pump start relay is needed to maintain pressure.
 
-In a pump-equipped system the valve opens first (solenoid energises, path is clear), then the pump starts — and the pump stops before the valve closes. This sequencing prevents water hammer. Replace the `valve_open_switch` and `valves` sections as follows:
+Both the 24V supply (K1 SSR) and the pump relay need to be active whenever a valve runs. A template switch combines them as the single `valve_open_switch`. Replace the `valve_open_switch` and `valves` sections as follows:
 
 ```yaml
 switch:
@@ -234,13 +234,24 @@ switch:
     internal: true
     restore_mode: ALWAYS_OFF
 
+  # Template switch enables both 24V supply and pump relay together
+  - platform: template
+    id: valve_master
+    optimistic: true
+    turn_on_action:
+      - switch.turn_on: supply_24v
+      - switch.turn_on: pump_relay
+    turn_off_action:
+      - switch.turn_off: pump_relay
+      - switch.turn_off: supply_24v
+
   # supply_24v and zone_1–zone_5 unchanged
 
 sprinkler:
   - id: sprinkler
     main_switch: "Sprinkler System"
     auto_advance: true
-    valve_open_switch: pump_relay   # pump turns on/off with valves
+    valve_open_switch: valve_master   # enables both 24V rail and pump
     valves:
       # zone_0 removed — now the pump relay
       - valve_switch: zone_1

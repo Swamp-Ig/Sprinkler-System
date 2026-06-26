@@ -20,7 +20,7 @@
 | 2 | Neutral |
 
 ### J3 — XFMR In
-2-pin screw terminal. 24 VAC input from the **secondary** of the external transformer — the solenoid supply rail.
+2-pin pluggable terminal (KF2EDG-style). 24 VAC input from the **secondary** of the external transformer — the solenoid supply rail.
 
 | Pin | Signal |
 |-----|--------|
@@ -57,7 +57,7 @@ Station 0 (J20/GPIO17/K20) can optionally be wired to a pump relay instead of a 
 
 Wire each button between pin 2 (+3.3 V) and the desired button pin.
 
-If four inputs aren't enough, the four pins can be wired as a resistor ladder to a single ADC pin, giving 16+ combinations. See the [ESPHome ADC documentation](https://esphome.io/components/sensor/adc.html).
+If more than four inputs are needed, GPIO34 (pin 3) can be wired as a resistor ladder to give 16+ combinations on a single ADC input. GPIO34 is preferred for this as it is input-only with no competing functions. See the [ESPHome ADC documentation](https://esphome.io/components/sensor/adc.html).
 
 ### J5 — UART0
 4-pin JST XH. For programming and serial debug. Connect a 5 V USB-to-UART adapter here — the adapter's 5 V powers U1 (AMS1117-3.3) and the ESP32 without needing mains. **Power from one source at a time** — do not connect the UART adapter's 5 V while the board is also running from mains.

@@ -20,6 +20,17 @@
 
 ---
 
+## Enclosure
+
+This board must be installed in a suitable enclosure. Since it is likely to be installed outdoors near irrigation equipment:
+
+- **IP65 minimum** — dust-tight and protected against water jets. IP66 or better if there is any chance of direct spray or hosing down.
+- Use a **non-conductive (plastic) enclosure** — metal enclosures require additional insulation between the mains terminals and the enclosure wall.
+- All cable entry points must be sealed with appropriate **cable glands** rated for the enclosure IP class.
+- Mount the enclosure **vertically** with cable entries facing down to prevent water pooling at the glands.
+
+---
+
 ## Conformal Coating
 
 Even inside a sealed enclosure, condensation can form on the PCB during temperature cycling. Apply conformal coating after final assembly and testing:

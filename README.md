@@ -22,22 +22,7 @@ A custom PCB for controlling up to six 24 VAC irrigation solenoid valves via WiF
 - The external transformer must be safety-rated (UL, CE, or equivalent) for your locale.
 - Replace fuses only with the specified ratings — see the BOM below.
 
-### Enclosure
-
-This board must be installed in a suitable enclosure. Since it is likely to be installed outdoors near irrigation equipment:
-
-- **IP65 minimum** — dust-tight and protected against water jets. IP66 or better if there is any chance of direct spray or hosing down.
-- Use a **non-conductive (plastic) enclosure** — metal enclosures require additional insulation between the mains terminals and the enclosure wall.
-- All cable entry points must be sealed with appropriate **cable glands** rated for the enclosure IP class.
-- Mount the enclosure **vertically** with cable entries facing down to prevent water pooling at the glands.
-
-### Conformal Coating
-
-Even inside a sealed enclosure, condensation can form on the PCB during temperature cycling. Apply conformal coating after final assembly and testing:
-
-- **Mask before coating**: the mains/transformer terminals (J1–J3), pluggable zone connectors (J20–J25; KF2EDG-style), fuse holders, the ESP32 U.FL connector, and the USB-to-UART header (J5) so they remain accessible.
-- Apply 2–3 thin coats of acrylic or silicone conformal coating to both sides of the PCB.
-- Allow to fully cure before installing in the enclosure.
+See [Assembly Notes](docs/assembly.md) for enclosure requirements and conformal coating instructions.
 
 ## How It Works
 
