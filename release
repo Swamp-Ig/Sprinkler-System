@@ -1,0 +1,39 @@
+#!/bin/sh
+set -e
+
+VERSION="$1"
+
+if [ -z "$VERSION" ]; then
+    echo "usage: $0 <version>  (e.g. ./release v1.1.0)" >&2
+    exit 1
+fi
+
+# ── Ensure working tree is clean ──────────────────────────────────────────────
+if ! git diff --quiet || ! git diff --cached --quiet; then
+    echo "error: working tree has uncommitted changes — please commit or stash first" >&2
+    exit 1
+fi
+
+PCB="Sprinkler System.kicad_pcb"
+SCH="Sprinkler System.kicad_sch"
+TODAY=$(date +%Y-%m-%d)
+
+# ── Stamp title blocks ────────────────────────────────────────────────────────
+echo "Stamping title blocks with $VERSION ($TODAY)..."
+for f in "$SCH" "$PCB"; do
+    sed -i \
+        "s|(rev \"[^\"]*\")|(rev \"$VERSION\")|; s|(date \"[^\"]*\")|(date \"$TODAY\")|" \
+        "$f"
+done
+git add "$SCH" "$PCB"
+
+# ── Commit and tag ────────────────────────────────────────────────────────────
+# KICAD_RELEASE tells the pre-commit hook to skip re-stamping (we've already
+# set the exact version above), while still running the fabrication exports.
+echo "Committing..."
+KICAD_RELEASE=1 git commit -m "Release $VERSION"
+git tag -f "$VERSION"
+
+echo ""
+echo "Tagged $VERSION. To publish:"
+echo "  git push && git push origin $VERSION --force"

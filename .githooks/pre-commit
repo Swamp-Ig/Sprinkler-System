@@ -38,18 +38,22 @@ PCB="Sprinkler System.kicad_pcb"
 SCH="Sprinkler System.kicad_sch"
 
 # ── Stamp title block with git tag and today's date ───────────────────────────
-VERSION=$(git describe --tags --always 2>/dev/null || true)
-COMMIT_DATE=$(date +%Y-%m-%d)
+# Skipped when KICAD_RELEASE is set — the release script handles stamping
+# directly with the exact version string before committing.
+if [ -z "$KICAD_RELEASE" ]; then
+    VERSION=$(git describe --tags --always 2>/dev/null || true)
+    COMMIT_DATE=$(date +%Y-%m-%d)
 
-stamp_title_block() {
-    sed -i \
-        "s|(rev \"[^\"]*\")|(rev \"$VERSION\")|; s|(date \"[^\"]*\")|(date \"$COMMIT_DATE\")|" \
-        "$1"
-}
+    stamp_title_block() {
+        sed -i \
+            "s|(rev \"[^\"]*\")|(rev \"$VERSION\")|; s|(date \"[^\"]*\")|(date \"$COMMIT_DATE\")|" \
+            "$1"
+    }
 
-if [ -n "$VERSION" ]; then
-    [ -n "$SCH_CHANGED" ] && stamp_title_block "$SCH" && git add "$SCH"
-    [ -n "$PCB_CHANGED" ] && stamp_title_block "$PCB" && git add "$PCB"
+    if [ -n "$VERSION" ]; then
+        [ -n "$SCH_CHANGED" ] && stamp_title_block "$SCH" && git add "$SCH"
+        [ -n "$PCB_CHANGED" ] && stamp_title_block "$PCB" && git add "$PCB"
+    fi
 fi
 
 # ── PCB exports ───────────────────────────────────────────────────────────────

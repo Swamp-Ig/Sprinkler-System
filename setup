@@ -1,0 +1,47 @@
+#!/bin/sh
+set -e
+
+# ── Git hooks ─────────────────────────────────────────────────────────────────
+echo "Configuring git hooks..."
+git config core.hooksPath .githooks
+echo "  core.hooksPath -> .githooks"
+
+# ── kicad-cli ─────────────────────────────────────────────────────────────────
+echo ""
+echo "Checking for kicad-cli..."
+
+KICAD=""
+if [ -n "$KICAD_CLI" ] && command -v "$KICAD_CLI" >/dev/null 2>&1; then
+    KICAD="$KICAD_CLI"
+elif command -v kicad-cli >/dev/null 2>&1; then
+    KICAD="kicad-cli"
+else
+    for candidate in \
+        "/c/Program Files/KiCad/10.0/bin/kicad-cli.exe" \
+        "/c/Program Files/KiCad/9.0/bin/kicad-cli.exe" \
+        "/c/Program Files/KiCad/8.0/bin/kicad-cli.exe"
+    do
+        if [ -x "$candidate" ]; then
+            KICAD="$candidate"
+            break
+        fi
+    done
+fi
+
+if [ -n "$KICAD" ]; then
+    VERSION=$("$KICAD" --version 2>&1 | head -1)
+    echo "  found: $KICAD"
+    echo "  version: $VERSION"
+else
+    echo "  warning: kicad-cli not found on PATH or common install locations" >&2
+    echo "" >&2
+    echo "  The pre-commit hook will skip fabrication exports until kicad-cli" >&2
+    echo "  is available. Fix by adding KiCad's bin/ dir to PATH, or set:" >&2
+    echo "" >&2
+    echo "    export KICAD_CLI=\"/path/to/kicad-cli\"" >&2
+    echo "" >&2
+    echo "  Add this to your shell profile (~/.bashrc, ~/.zshrc, etc.)" >&2
+fi
+
+echo ""
+echo "Setup complete."
