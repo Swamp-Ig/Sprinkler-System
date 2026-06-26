@@ -1,6 +1,0 @@
-{
-    "recommendations": [
-        // TOML syntax highlighting for .kicad_pro files
-        "tamasfe.even-better-toml"
-    ]
-}
