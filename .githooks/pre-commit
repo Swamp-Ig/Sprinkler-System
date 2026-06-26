@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 
-# Locate kicad-cli — override by setting KICAD_CLI in your environment.
+# ── Locate kicad-cli ──────────────────────────────────────────────────────────
+# Override by setting KICAD_CLI in your environment.
 if [ -n "$KICAD_CLI" ]; then
     KICAD="$KICAD_CLI"
 elif command -v kicad-cli >/dev/null 2>&1; then
@@ -36,6 +37,22 @@ fi
 PCB="Sprinkler System.kicad_pcb"
 SCH="Sprinkler System.kicad_sch"
 
+# ── Stamp title block with git tag and today's date ───────────────────────────
+VERSION=$(git describe --tags --always 2>/dev/null || true)
+COMMIT_DATE=$(date +%Y-%m-%d)
+
+stamp_title_block() {
+    sed -i \
+        "s|(rev \"[^\"]*\")|(rev \"$VERSION\")|; s|(date \"[^\"]*\")|(date \"$COMMIT_DATE\")|" \
+        "$1"
+}
+
+if [ -n "$VERSION" ]; then
+    [ -n "$SCH_CHANGED" ] && stamp_title_block "$SCH" && git add "$SCH"
+    [ -n "$PCB_CHANGED" ] && stamp_title_block "$PCB" && git add "$PCB"
+fi
+
+# ── PCB exports ───────────────────────────────────────────────────────────────
 if [ -n "$PCB_CHANGED" ]; then
     echo "kicad: exporting PCB outputs..."
     "$KICAD" pcb export gerbers  --output manufacturing/gerbers "$PCB"
@@ -50,6 +67,7 @@ if [ -n "$PCB_CHANGED" ]; then
             docs/pcb.pdf docs/board.step
 fi
 
+# ── Schematic exports ─────────────────────────────────────────────────────────
 if [ -n "$SCH_CHANGED" ]; then
     echo "kicad: exporting schematic outputs..."
     "$KICAD" sch export pdf     --output docs/schematic.pdf "$SCH"
