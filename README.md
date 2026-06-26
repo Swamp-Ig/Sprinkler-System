@@ -98,19 +98,19 @@ docs/
   esphome.md                   ← ESPHome firmware configuration
   assembly.md                  ← Build and commissioning guide
 .githooks/pre-commit           ← Auto-exports fabrication outputs on commit
-setup                          ← One-time dev environment setup
-release                        ← Tag a release version
+setup / setup.ps1              ← One-time dev environment setup
+release / release.ps1          ← Tag a release version
 ```
 
 ## Developing
 
 ### First-time setup
 
-```sh
-./setup
+```powershell
+.\setup.ps1
 ```
 
-Configures the git hook path and verifies `kicad-cli` is available.
+Configures the git hook path and verifies `kicad-cli` is available. Use `./setup` in Git Bash / WSL.
 
 ### Fabrication exports
 
@@ -120,12 +120,12 @@ Run DRC and ERC from within KiCad before committing — fix all errors before su
 
 ### Releasing
 
-```sh
-./release v1.1.0
+```powershell
+.\release.ps1 v1.1.0
 ```
 
-Stamps the schematic and PCB title blocks with the version and date, commits (triggering a fresh fabrication export), and creates the git tag. Then push:
+Stamps the schematic and PCB title blocks with the version and date, commits (triggering a fresh fabrication export), and creates the git tag. Use `./release v1.1.0` in Git Bash / WSL. Then push:
 
-```sh
+```powershell
 git push && git push origin v1.1.0
 ```
