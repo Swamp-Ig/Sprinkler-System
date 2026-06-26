@@ -21,6 +21,11 @@ Thumbs.db
 *~
 .history/
 
+# ─── Editor / tool directories ────────────────────────────────────────────────
+
+.vscode/
+.claude/
+
 # ─── Manufacturing zip archives ───────────────────────────────────────────────
 # Vendor upload packages (JLCPCB, PCBWay, etc.) — generated from tracked
 # Gerbers on demand, no need to version these.
