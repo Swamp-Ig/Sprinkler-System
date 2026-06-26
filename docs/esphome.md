@@ -129,32 +129,32 @@ binary_sensor:
   - platform: gpio
     name: "Button 0"
     pin:
-      number: GPIO32
-      mode: INPUT
+      number: GPIO34
+      mode: INPUT         # input-only pin — external 10k pull-down sets idle LOW
       inverted: false   # active-HIGH — button pulls to +3.3 V, 10k pull-down idles LOW
     id: button_0
 
   - platform: gpio
     name: "Button 1"
     pin:
-      number: GPIO33
-      mode: INPUT
+      number: GPIO35
+      mode: INPUT         # input-only pin — external 10k pull-down sets idle LOW
       inverted: false
     id: button_1
 
   - platform: gpio
     name: "Button 2"
     pin:
-      number: GPIO34
-      mode: INPUT         # input-only pin — external 10k pull-down sets idle LOW
+      number: GPIO32
+      mode: INPUT
       inverted: false
     id: button_2
 
   - platform: gpio
     name: "Button 3"
     pin:
-      number: GPIO35
-      mode: INPUT         # input-only pin — external 10k pull-down sets idle LOW
+      number: GPIO33
+      mode: INPUT
       inverted: false
     id: button_3
 

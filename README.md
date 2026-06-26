@@ -64,7 +64,10 @@ When a zone is activated, the ESP32 first enables the 24 VAC rail (K1), then dri
 | R20–R25 | SMD resistors | 100 Ω | Zone snubber series |
 | LED1, LED2 | LED ×2 | 0805 | IO2 status / power |
 | SW1, SW2 | Tactile switch ×2 | — | EN (reset) / BOOT |
-| TP1–TP3 | Test points | GND / 5V / 3V3 | |
+| J1 | Screw terminal | Phoenix PT 1,5/3-5.0 (3-pin, 5.0 mm) | Mains input — must be mains-rated |
+| J2 | Screw terminal | 2-pin, 5.0 mm | 240 VAC output to transformer primary |
+| J3, J20–J25 | Pluggable terminal ×7 | KF2EDG-style, 2-pin | 24 VAC — J3 transformer in, J20–J25 zone outputs |
+| XFMR | Transformer (external) | 240 VAC → 24 VAC, ≥50 VA, safety-rated | Size for zones × ~8 VA each |
 
 See [`manufacturing/bom/bom.csv`](manufacturing/bom/bom.csv) for the full BOM with quantities and footprints.
 

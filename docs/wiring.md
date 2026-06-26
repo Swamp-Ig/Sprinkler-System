@@ -50,14 +50,14 @@ Station 0 (J20/GPIO17/K20) can optionally be wired to a pump relay instead of a 
 |-----|--------|
 | 1 | GND |
 | 2 | +3.3 V |
-| 3 | Button 2 (GPIO34) |
-| 4 | Button 3 (GPIO35) |
-| 5 | Button 0 (GPIO32) |
-| 6 | Button 1 (GPIO33) |
+| 3 | Button 0 (GPIO34) |
+| 4 | Button 1 (GPIO35) |
+| 5 | Button 2 (GPIO32) |
+| 6 | Button 3 (GPIO33) |
 
 Wire each button between pin 2 (+3.3 V) and the desired button pin.
 
-If more than four inputs are needed, GPIO34 (pin 3) can be wired as a resistor ladder to give 16+ combinations on a single ADC input. GPIO34 is preferred for this as it is input-only with no competing functions. See the [ESPHome ADC documentation](https://esphome.io/components/sensor/adc.html).
+If more than four inputs are needed, GPIO34 (Button 0, pin 3) can be wired as a resistor ladder to give 16+ combinations on a single ADC input. GPIO34 is preferred for this as it is input-only with no competing functions. See the [ESPHome ADC documentation](https://esphome.io/components/sensor/adc.html).
 
 ### J5 — UART0
 4-pin JST XH. For programming and serial debug. Connect a 5 V USB-to-UART adapter here — the adapter's 5 V powers U1 (AMS1117-3.3) and the ESP32 without needing mains. **Power from one source at a time** — do not connect the UART adapter's 5 V while the board is also running from mains.
@@ -101,7 +101,7 @@ If more than four inputs are needed, GPIO34 (pin 3) can be wired as a resistor l
 | 22 | Zone 4 | → ULN2803A → K24 relay |
 | 23 | Zone 5 | → ULN2803A → K25 relay |
 | 25 | 24V sense | EL817 optocoupler output — HIGH when 24 VAC rail is live |
-| 32 | Button 0 | J4, 10 kΩ pull-down (R5) — active-HIGH |
-| 33 | Button 1 | J4, 10 kΩ pull-down (R8) — active-HIGH |
-| 34 | Button 2 | J4, 10 kΩ pull-down (R10) — active-HIGH, input-only |
-| 35 | Button 3 | J4, 10 kΩ pull-down (R11) — active-HIGH, input-only |
+| 32 | Button 2 | J4 pin 5, 10 kΩ pull-down (R5) — active-HIGH |
+| 33 | Button 3 | J4 pin 6, 10 kΩ pull-down (R8) — active-HIGH |
+| 34 | Button 0 | J4 pin 3, 10 kΩ pull-down (R10) — active-HIGH, input-only |
+| 35 | Button 1 | J4 pin 4, 10 kΩ pull-down (R11) — active-HIGH, input-only |
