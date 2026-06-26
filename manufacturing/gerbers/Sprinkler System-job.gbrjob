@@ -5,13 +5,13 @@
       "Application": "Pcbnew",
       "Version": "10.0.3"
     },
-    "CreationDate": "2026-06-26T09:31:16+08:00"
+    "CreationDate": "2026-06-26T18:27:48+08:00"
   },
   "GeneralSpecs": {
     "ProjectId": {
       "Name": "Sprinkler System",
       "GUID": "53707269-6e6b-46c6-9572-205379737465",
-      "Revision": "v1.0.0-2-g28736a3"
+      "Revision": "v1.0.0"
     },
     "Size": {
       "X": 165.05,

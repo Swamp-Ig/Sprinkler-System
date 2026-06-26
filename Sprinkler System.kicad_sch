@@ -7,7 +7,7 @@
 	(title_block
 		(title "ESPHome Sprinkler System")
 		(date "2026-06-26")
-		(rev "v1.0.0-1-gb064c0c")
+		(rev "v1.0.0")
 	)
 	(lib_symbols
 		(symbol "Connector:Conn_01x02_Socket"

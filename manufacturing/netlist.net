@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "\\\\fs.ninjateaparty.local\\Users$\\penny\\My Documents\\Hardware\\Sprinkler System\\Sprinkler System.kicad_sch")
-		(date "2026-06-26T09:28:16")
+		(date "2026-06-26T18:27:54")
 		(tool "Eeschema 10.0.3")
 		(sheet
 			(number "1")
@@ -11,7 +11,7 @@
 			(title_block
 				(title "ESPHome Sprinkler System")
 				(company)
-				(rev "v1.0.0-1-gb064c0c")
+				(rev "v1.0.0")
 				(date "2026-06-26")
 				(source "Sprinkler System.kicad_sch")
 				(comment
