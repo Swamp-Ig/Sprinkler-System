@@ -4,6 +4,11 @@
 	(generator_version "10.0")
 	(uuid "8fa12040-b3d8-4f13-b02e-6c4ba5cdd128")
 	(paper "A4")
+	(title_block
+		(title "ESPHome Sprinkler System")
+		(date "2026-06-26")
+		(rev "v1.0.0-1-gb064c0c")
+	)
 	(lib_symbols
 		(symbol "Connector:Conn_01x02_Socket"
 			(pin_names
