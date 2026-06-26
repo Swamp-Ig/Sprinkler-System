@@ -10,7 +10,7 @@
 	(title_block
 		(title "ESPHome Sprinkler System")
 		(date "2026-06-26")
-		(rev "v1.0.0-1-gb064c0c")
+		(rev "v1.0.0-2-g28736a3")
 	)
 	(layers
 		(0 "F.Cu" signal)
@@ -8867,7 +8867,7 @@
 			(uuid "056cb21d-a369-4c44-a50b-88c33db6c804")
 		)
 		(embedded_fonts no)
-		(model "${KIPRJMOD}/footprints/G3MB-202P.step"
+		(model "${KIPRJMOD}/Sprinkler System.pretty/G3MB-202P.step"
 			(offset
 				(xyz 0 1.4 0)
 			)
