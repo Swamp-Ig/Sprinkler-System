@@ -53,7 +53,6 @@ When a zone is activated, the ESP32 first enables the 24 VAC rail (K1), then dri
 | F1 | Fuse | **T1A** (time-delay) | Mains supply — slow-blow for transformer/HLK inrush |
 | F2 | Fuse | **T2A** (time-delay) | 24 VAC supply — slow-blow for solenoid inrush |
 | D1 | Diode | 1N4148 (0805) | 24 VAC rail sense |
-| JP1 | Solder jumper | 3-way | J6 I²C-header supply select: **3V3 (default)** / 5V (back side) |
 | C5 | Capacitor | 220 µF / ≥10 V | 5 V rail bulk reservoir (THT radial) |
 | C1, C7 | SMD capacitors | 10 µF | Supply filtering |
 | C2, C3 | SMD capacitors | 22 µF | Supply filtering / sense |
