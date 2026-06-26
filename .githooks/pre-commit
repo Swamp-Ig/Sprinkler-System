@@ -1,0 +1,59 @@
+#!/bin/sh
+set -e
+
+# Locate kicad-cli — override by setting KICAD_CLI in your environment.
+if [ -n "$KICAD_CLI" ]; then
+    KICAD="$KICAD_CLI"
+elif command -v kicad-cli >/dev/null 2>&1; then
+    KICAD="kicad-cli"
+else
+    for candidate in \
+        "/c/Program Files/KiCad/10.0/bin/kicad-cli.exe" \
+        "/c/Program Files/KiCad/9.0/bin/kicad-cli.exe" \
+        "/c/Program Files/KiCad/8.0/bin/kicad-cli.exe"
+    do
+        if [ -x "$candidate" ]; then
+            KICAD="$candidate"
+            break
+        fi
+    done
+fi
+
+if [ -z "$KICAD" ]; then
+    echo "warning: kicad-cli not found, skipping fabrication export" >&2
+    echo "         Set KICAD_CLI=/path/to/kicad-cli to suppress this warning" >&2
+    exit 0
+fi
+
+STAGED=$(git diff --cached --name-only)
+PCB_CHANGED=$(echo "$STAGED" | grep -E '\.kicad_pcb$' || true)
+SCH_CHANGED=$(echo "$STAGED" | grep -E '\.kicad_sch$' || true)
+
+if [ -z "$PCB_CHANGED" ] && [ -z "$SCH_CHANGED" ]; then
+    exit 0
+fi
+
+PCB="Sprinkler System.kicad_pcb"
+SCH="Sprinkler System.kicad_sch"
+
+if [ -n "$PCB_CHANGED" ]; then
+    echo "kicad: exporting PCB outputs..."
+    "$KICAD" pcb export gerbers  --output manufacturing/gerbers "$PCB"
+    "$KICAD" pcb export drill    --output manufacturing/drill/ "$PCB"
+    "$KICAD" pcb export pos      --format csv --units mm \
+        --output "manufacturing/pos/Sprinkler System-pos.csv" "$PCB"
+    "$KICAD" pcb export pdf      --output docs/pcb.pdf \
+        --layers F.Cu,B.Cu,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask,Edge.Cuts,F.Fab,B.Fab \
+        --mode-single --include-border-title "$PCB"
+    "$KICAD" pcb export step     --output docs/board.step "$PCB"
+    git add manufacturing/gerbers manufacturing/drill manufacturing/pos \
+            docs/pcb.pdf docs/board.step
+fi
+
+if [ -n "$SCH_CHANGED" ]; then
+    echo "kicad: exporting schematic outputs..."
+    "$KICAD" sch export pdf     --output docs/schematic.pdf "$SCH"
+    "$KICAD" sch export bom     --output manufacturing/bom/bom.csv "$SCH"
+    "$KICAD" sch export netlist --output manufacturing/netlist.net "$SCH"
+    git add docs/schematic.pdf manufacturing/bom manufacturing/netlist.net
+fi
